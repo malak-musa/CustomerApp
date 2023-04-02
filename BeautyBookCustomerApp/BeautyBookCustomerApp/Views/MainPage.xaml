@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BeautyBookCustomerApp.Views.MainPage"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+            
+            <Grid BackgroundColor="#afc4c0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Frame HorizontalOptions="Start"
+                       CornerRadius="32.5" 
+                       IsClippedToBounds="True"
+                       Padding="0"  
+                       BackgroundColor="#afc4c0">
+                    <Frame.Content>
+
+                        <Image Source="profile_image.jpg" 
+                           WidthRequest="60" 
+                           HeightRequest="65" 
+                           Aspect="AspectFit" 
+                           HorizontalOptions="Start" 
+                           VerticalOptions="Start" />
+                    </Frame.Content>
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnProfileTapped" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+
+                <Frame CornerRadius="10" 
+                       Padding="0" 
+                       HasShadow="False" 
+                       BackgroundColor="Transparent">
+                    
+                    <Image Source="search_icon.jpg" 
+                           WidthRequest="60" 
+                           HeightRequest="65" 
+                           Aspect="AspectFit"
+                           HorizontalOptions="End" 
+                           VerticalOptions="End" 
+                           Grid.Row="0" />
+                    
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnProfileTapped" />
+                    </Frame.GestureRecognizers>
+                    
+                </Frame>
+
+            </Grid>
+
+            <Grid Margin="10,15,10,10" 
+                  BackgroundColor="#F1F1F1" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="160"/>
+                </Grid.ColumnDefinitions>
+
+                <Label FontSize="Large" 
+                       Text="Bana salon" 
+                       VerticalOptions="End" 
+                       HorizontalOptions="Start"
+                       Grid.Row="0" 
+                       Grid.Column="1" 
+                       Grid.ColumnSpan="2"/>
+
+                <Image Source="location_icon.png" 
+                       WidthRequest="30" 
+                       HeightRequest="25" 
+                       Aspect="AspectFit"
+           HorizontalOptions="End" VerticalOptions="Center"
+           Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
+
+                <Label FontSize="Large" 
+           Text="Nablus" VerticalOptions="Center" HorizontalOptions="Start"
+           Grid.Row="1" Grid.Column="2" />
+
+                <Button FontSize="Medium" Text="Visit" CornerRadius="20" 
+    BackgroundColor="#3C504C" TextColor="White"
+    BorderWidth="0" BorderColor="Transparent" HorizontalOptions="Start"
+    Grid.Row="1" Grid.Column="3" WidthRequest="120" HeightRequest="50" />
+
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
