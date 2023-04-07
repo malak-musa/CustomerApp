@@ -3,8 +3,214 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BeautyBookCustomerApp.Views.BookingPage1">
     <ContentPage.Content>
-        <StackLayout>
-            
+        <StackLayout BackgroundColor="White">
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Ahmad el king : " Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="0"  
+                   BackgroundColor="#afc4c0">
+                    <Button Text="BBBBB" Padding="10,10,10,10" Clicked="OnIncreaseButtonClicked" />
+                    <Frame.GestureRecognizers>
+                      
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Ahmad el king : " Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="0"  
+                   BackgroundColor="#afc4c0">
+                    <Button Text="BBBBB" Padding="10,10,10,10" Clicked="OnIncreaseButtonClicked" />
+                    <Frame.GestureRecognizers>
+                     
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Ahmad el king : " Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="0"  
+                   BackgroundColor="#afc4c0">
+                    <Button Text="BBBBB" Padding="10,10,10,10" Clicked="OnIncreaseButtonClicked" />
+                    <Frame.GestureRecognizers>
+                      
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Ahmad el king : " Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="0"  
+                   BackgroundColor="#afc4c0">
+                    <Button Text="BBBBB" Padding="10,10,10,10" Clicked="OnIncreaseButtonClicked" />
+                    <Frame.GestureRecognizers>
+                   
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Ahmad el king : " Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="0"  
+                   BackgroundColor="#afc4c0">
+                    <Button Text="BBBBB" Padding="10,10,10,10" Clicked="OnIncreaseButtonClicked" />
+                    <Frame.GestureRecognizers>
+                   
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Ahmad el king : " Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="0"  
+                   BackgroundColor="#afc4c0">
+                    <Button Text="BBBBB" Padding="10,10,10,10" Clicked="OnIncreaseButtonClicked" />
+                    <Frame.GestureRecognizers>
+                       
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Ahmad el king : " Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="0"  
+                   BackgroundColor="#afc4c0">
+                    <Button Text="BBBBB" Padding="10,10,10,10" Clicked="OnIncreaseButtonClicked" />
+                    <Frame.GestureRecognizers>
+                    
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Ahmad el king : " Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="0"  
+                   BackgroundColor="#afc4c0">
+                    <Button Text="BBBBB" Padding="10,10,10,10" Clicked="OnIncreaseButtonClicked" />
+                    <Frame.GestureRecognizers>
+                      
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Ahmad el king : " Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="0"  
+                   BackgroundColor="#afc4c0">
+                    <Button Text="BBBBB" Padding="10,10,10,10" Clicked="OnIncreaseButtonClicked" />
+                    <Frame.GestureRecognizers>
+                       
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

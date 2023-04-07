@@ -4,7 +4,16 @@
              x:Class="BeautyBookCustomerApp.Views.BookingPage3">
     <ContentPage.Content>
         <StackLayout>
-            
+            <StackLayout.GestureRecognizers>
+                <SwipeGestureRecognizer
+                    Direction="Right"
+                    Swiped="SwipeGestureRecognizer_Swiped_1"/>
+            </StackLayout.GestureRecognizers>
+            <Label Text="your count is : 0"
+                   x:Name="labelData"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Header"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
