@@ -16,5 +16,14 @@ namespace BeautyBookCustomerApp.Views
         {
             InitializeComponent();
         }
+
+        private void SelectTime(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackgroundColor = Color.White;
+            button.TextColor = Color.Black;
+            button.BorderWidth = 1;
+            button.BorderColor = Color.DarkOliveGreen;
+        }
     }
 }
