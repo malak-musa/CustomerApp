@@ -4,7 +4,13 @@
              x:Class="BeautyBookCustomerApp.Views.BookingPage1">
     <ContentPage.Content>
         <StackLayout>
+
+
+
+
             
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
