@@ -17,6 +17,11 @@ namespace BeautyBookCustomerApp.Views
             InitializeComponent();
         }
 
+        private void SignupButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
         /*private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
 
