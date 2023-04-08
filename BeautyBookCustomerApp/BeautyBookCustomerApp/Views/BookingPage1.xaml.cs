@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +16,42 @@ namespace BeautyBookCustomerApp.Views
         {
             InitializeComponent();
         }
+        private bool isLabelClicked = false;
+        private void OnLabelTapped(object sender, EventArgs e)
+        {
+            var label = (Label)sender;
 
-        
+            if (!isLabelClicked)
+            {
+                label.Text = "+";
+                isLabelClicked = true;
+            }
+            else
+            {
+                label.Text = "-";
+                isLabelClicked = false;
+            }
+        }
+        private bool isButtonClicked = false;
+
+        private void OnButtonClicked(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+
+            if (!isButtonClicked)
+            {
+                button.Text = "+";
+                isButtonClicked = true;
+            }
+            else
+            {
+                button.Text = "-";
+                isButtonClicked = false;
+            }
+        }
+
+
+
+ 
     }
 }

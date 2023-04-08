@@ -1,4 +1,4 @@
-﻿using BeautyBookCustomerApp.Views;
+using BeautyBookCustomerApp.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,6 +11,7 @@ namespace BeautyBookCustomerApp
         {
             InitializeComponent();
 
+            MainPage = new NavigationPage(new BookingPage1());
             //MainPage = new NavigationPage(new LoginPage());
             MainPage = new NavigationPage(new SalonProfilePage());
         }
