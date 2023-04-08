@@ -17,9 +17,9 @@ namespace BeautyBookCustomerApp.Views
             InitializeComponent();
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void LoginButton_Clicked(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "user@gmail.com" && txtPassword.Text == "123456")
+            if (PasswordEntry.Text == "user@gmail.com" && UsernameEntry.Text == "123456")
             {
                 //Navigation.PushAsync(new MainPage());
             }
@@ -29,7 +29,7 @@ namespace BeautyBookCustomerApp.Views
             }
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private void OnSignupLabelTapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SignupPage());
         }
