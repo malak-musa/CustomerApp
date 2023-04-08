@@ -24,9 +24,9 @@ namespace BeautyBookCustomerApp.Views
 
         }
 
-        public async void AppointmentButton_Clicked(object sender, EventArgs e)
+        private async void AppointmentButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SalonProfilePage());
+            await Navigation.PushAsync(new BookingPage1());
         }
 
 
