@@ -7,7 +7,6 @@
     <ContentPage.Content>
         <StackLayout>
 
-
             <Frame CornerRadius="10" 
                     BackgroundColor="White" 
                     Margin="30,60,30,0">
