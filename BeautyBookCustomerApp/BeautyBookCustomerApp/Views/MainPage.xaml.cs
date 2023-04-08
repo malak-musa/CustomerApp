@@ -21,5 +21,9 @@ namespace BeautyBookCustomerApp.Views
         {
             await Navigation.PushAsync(new UserProfilePage());
         }
+        private async void VisitButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SalonProfilePage());
+        }
     }
 } 

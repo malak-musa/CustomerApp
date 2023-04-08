@@ -1,10 +1,82 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BeautyBookCustomerApp.Views.SalonProfilePage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:input="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
+             x:Class="BeautyBookCustomerApp.Views.SalonProfilePage"
+             >
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="10">
+
+            <Image Source="profile_cover.jpg" Aspect="AspectFill" HeightRequest="190" Margin="-7,-10,-10,-70"/>
             
+            <StackLayout Orientation="Horizontal">
+                <Image Source="salon_logo.png" WidthRequest="100" HeightRequest="100" />
+
+                <StackLayout Orientation="Vertical" Margin="20,-10,0,0">
+                    <Label Text="&#x0a;&#x0a;&#x0a;"/>
+                    <Label Text="Salon Name" FontSize="Large" TextColor="Black" />
+                    <Button Text="Appointment" FontSize="Small" BackgroundColor="#3C504C" TextColor="White" CornerRadius="10" HeightRequest="30"
+                            Padding="5" Clicked="AppointmentButton_Clicked"/>
+                    <StackLayout Orientation="Horizontal" Margin="-30,0,0,0" >
+                        <Image Source="phone_icon.png" HeightRequest="24" WidthRequest="24" />
+
+                        <Button Text="Cal Us" FontSize="14" BackgroundColor="#B9B9B9" TextColor="White" CornerRadius="10" HeightRequest="30" WidthRequest="130"
+                                Padding="5"/>
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+            
+
+            <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" 
+            HorizontalOptions="CenterAndExpand" Margin="0,10,0,20" />
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Image Source="location_icon.png" WidthRequest="30" HeightRequest="30"  Margin="5,0,0,0"/>
+                    <Label Text="123 Main St, Anytown USA" FontSize="Small" Margin="3,5,0,0" />
+                </StackLayout>
+            
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Image Source="time_icon.png" WidthRequest="20" HeightRequest="30" Margin="10,0,0,0"/>
+                <Label Text="Opening Hours 10:00 AM - 6:00 PM" FontSize="Small" Margin="10,5,0,0" />
+            </StackLayout>
+            
+
+        <StackLayout Orientation="Horizontal" Spacing="10">
+                <Image Source="calender_icon.png" WidthRequest="30" HeightRequest="30" Margin="6,0,0,0"/>
+                <Label Text="Days Off Monday" FontSize="Small"  Margin="3,5,0,0" />
+            </StackLayout>
+        
+            
+            <BoxView Color="Gray" HeightRequest="1" WidthRequest="100" 
+            HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />
+
+            <Label Text="Services" FontAttributes="Bold" FontSize="Medium" TextColor="Black"/>
+
+            <Grid HeightRequest="100"  WidthRequest="100" Margin="20,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Nails"  Grid.Column="0" TextColor="Black" />
+                <Label Text="Makeup" Grid.Column="2" TextColor="Black" Margin="-10,0,0,0"/>
+                <Label Text=" Hair Cut " Grid.Column="3" TextColor="Black"/>
+               
+            </Grid>
+
+            <Grid HeightRequest="100"  WidthRequest="100" Margin="20,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Hair Color " Grid.Column="0" TextColor="Black"/>
+                <Label Text="Hair Styling" Grid.Column="2" TextColor="Black" Margin="-30,0,0,0"/>
+                <Label Text="S2" Grid.Column="3" TextColor="Black"/>
+
+            </Grid>
+
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
