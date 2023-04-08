@@ -14,10 +14,10 @@
 
                     <StackLayout Spacing="15">
 
-                        <Entry x:Name="email"
-                               Keyboard="Email"
+                        <Entry x:Name="username"
+                               Keyboard="Text"
                                Margin="15,20,15,5"
-                               Placeholder="Email"
+                               Placeholder="Username"
                                PlaceholderColor="#a5a5a5" 
                                FontSize="Body" />
 
@@ -47,17 +47,16 @@
                                PlaceholderColor="#a5a5a5" 
                                IsPassword="True" />
 
-                        
-                        
-
                         <Button x:Name="signupButton"
-                                Text="SIGN UP" 
-                                FontSize="Large" 
-                                TextColor="White" 
-                                BackgroundColor="#3C504C" 
-                                Margin="50,50,50,40" 
-                                Padding="10" 
-                                CornerRadius="10" />    
+                                Text="Signup"
+                                BackgroundColor="#3C504C"
+                                TextColor="White"
+                                HeightRequest="50"
+                                WidthRequest="200" 
+                                FontSize="24"
+                                CornerRadius="10"
+                                Margin="20,50,20,30"
+                                Clicked="SignupButton_Clicked"/>        
 
                     </StackLayout>
 
