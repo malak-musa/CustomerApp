@@ -14,10 +14,9 @@
 
                     <StackLayout Spacing="15">
 
-                        <Entry x:Name="email"
-                               Keyboard="Email"
+                        <Entry x:Name="username"
                                Margin="15,20,15,5"
-                               Placeholder="Email"
+                               Placeholder="Username"
                                PlaceholderColor="#a5a5a5" 
                                FontSize="Body" />
 
@@ -57,7 +56,9 @@
                                 BackgroundColor="#3C504C" 
                                 Margin="50,50,50,40" 
                                 Padding="10" 
-                                CornerRadius="10" />    
+                                CornerRadius="10" 
+                                Clicked="ButtonRegister_Clicked"
+                                />    
 
                     </StackLayout>
 
