@@ -114,6 +114,8 @@
             </StackLayout>
 
         </ScrollView>
-    
-    <ContentPage.Content>
+
+    </ContentPage.Content>
+
 </ContentPage>
+    

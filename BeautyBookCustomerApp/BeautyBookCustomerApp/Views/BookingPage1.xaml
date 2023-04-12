@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-         x:Class="BeautyBookCustomerApp.Views.BookingPage1">
-    <StackLayout>
-        <Label Text="Services" TextColor="Black" Grid.Column="0" Grid.Row="0"  Padding="20,10,10,10" 
-                    FontSize="Large"/>
-        <StackLayout BackgroundColor="White">
+         x:Class="BeautyBookCustomerApp.Views.BookingPage1"
+             Title="               Appointment">
+    
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Margin="10,10,20,0">
+                
+                <Label Text="Services" 
+                       TextColor="Black" 
+                       Grid.Column="0"
+                       Grid.Row="0"  Padding="20,30,10,10" 
+                       FontSize="28"/>
+        
+        <StackLayout>
             <Grid Margin="20" BackgroundColor="#F1F1F1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
@@ -23,7 +33,7 @@
                    IsClippedToBounds="True"
                    Padding="-10,-10,-10,-10"
                    BackgroundColor="#afc4c0">
-                    <Button Text="-" Font="larg" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
+                    <Button Text="-" FontSize="Title" TextColor="Black" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
                     <Frame.GestureRecognizers>
                     </Frame.GestureRecognizers>
                 </Frame>
@@ -45,7 +55,7 @@
                    IsClippedToBounds="True"
                    Padding="-10,-10,-10,-10"
                    BackgroundColor="#afc4c0">
-                    <Button Text="-" Font="larg" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
+                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
                     <Frame.GestureRecognizers>
                     </Frame.GestureRecognizers>
                 </Frame>
@@ -67,7 +77,7 @@
                    IsClippedToBounds="True"
                    Padding="-10,-10,-10,-10"
                    BackgroundColor="#afc4c0">
-                    <Button Text="-" Font="larg" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
+                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
                     <Frame.GestureRecognizers>
                     </Frame.GestureRecognizers>
                 </Frame>
@@ -89,7 +99,7 @@
                    IsClippedToBounds="True"
                    Padding="-10,-10,-10,-10"
                    BackgroundColor="#afc4c0">
-                    <Button Text="-" Font="larg" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
+                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
                     <Frame.GestureRecognizers>
                     </Frame.GestureRecognizers>
                 </Frame>
@@ -111,18 +121,28 @@
                    IsClippedToBounds="True"
                    
                    BackgroundColor="#afc4c0">
-                    <Button Text="-" Font="larg" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
+                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
                     <Frame.GestureRecognizers>
                     </Frame.GestureRecognizers>
                 </Frame>
             </Grid>
 
         </StackLayout>
-        <Button Text="Next"
+        <Button x:Name="nextButton"
+                    Text="Next"
+                    BackgroundColor="#3C504C"
                     TextColor="White"
-                    BackgroundColor="#75BBC8"
-                    CornerRadius="15"
-                    x:Name="ButtonNext"
-                    Margin="140,0,140,0" />
+                    HeightRequest="50"
+                    WidthRequest="200" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Margin="30,30,30,30"
+                    Clicked="NextButton_Clicked"/>
+
     </StackLayout>
+
+    </ScrollView>
+
+        </ContentPage.Content>
+
 </ContentPage>

@@ -34,7 +34,6 @@
                     </Frame.GestureRecognizers>
                 </Frame>
 
-
                 <Frame CornerRadius="10" 
                        Padding="0" 
                        HasShadow="False" 
