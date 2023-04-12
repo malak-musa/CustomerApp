@@ -6,8 +6,7 @@
     
     <ContentPage.Content>
 
-
-        <StackLayout VerticalOptions="Start"
+<StackLayout VerticalOptions="Start"
                      Margin="40,0,40,0">
 
             <Label Text="Welcome!"

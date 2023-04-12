@@ -91,7 +91,7 @@
                 <Button FontSize="Medium" Text="Visit" CornerRadius="20" 
     BackgroundColor="#3C504C" TextColor="White"
     BorderWidth="0" BorderColor="Transparent" HorizontalOptions="Start"
-    Grid.Row="1" Grid.Column="3" WidthRequest="120" HeightRequest="50" />
+    Grid.Row="1" Grid.Column="3" WidthRequest="120" HeightRequest="50" Clicked="VisitButton_Clicked"/>
 
             </Grid>
 
