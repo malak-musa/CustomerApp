@@ -3,9 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BeautyBookCustomerApp.Views.LoginPage"
              NavigationPage.HasNavigationBar="False">
-    
-    <ContentPage.Content>
 
+    <ContentPage.Content>
 
         <StackLayout VerticalOptions="Start"
                      Margin="40,0,40,0">
