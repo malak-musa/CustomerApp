@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BeautyBookCustomerApp.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,20 +13,28 @@ namespace BeautyBookCustomerApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        Database _userDB = new Database();
+        private const string FirebaseApiKey = "AIzaSyA37bTpBm27kjiHDuf5tigFwCmVsxmEYsY ";
         public LoginPage()
         {
             InitializeComponent();
         }
 
+        private async void LoginButton_Clicked(object sender, EventArgs e)
+        {
+            bool isLogin = await _userDB.Login(UsernameEntry.Text, PasswordEntry.Text);
+            if (isLogin)
+
         private void LoginButton_Clicked(object sender, EventArgs e)
         {
             if (PasswordEntry.Text == "user@gmail.com" && UsernameEntry.Text == "123456")
+
             {
-                //Navigation.PushAsync(new MainPage());
+                await Navigation.PushAsync(new MainPage());
             }
             else
             {
-                DisplayAlert("Ops..", "Username or Password is incorrect!", "OK");
+                await DisplayAlert("Error", "Incorrect username or password", "OK");
             }
         }
 

@@ -5,9 +5,7 @@
              Title="        Create your account">
     
     <ContentPage.Content>
-        <StackLayout>
-
-            <Frame CornerRadius="10" 
+        <Frame CornerRadius="10" 
                     BackgroundColor="White" 
                     Margin="30,60,30,0">
 
@@ -60,7 +58,5 @@
                 </StackLayout>
 
             </Frame>
-
-        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
