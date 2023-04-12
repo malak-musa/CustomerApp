@@ -6,8 +6,8 @@
     
     <ContentPage.Content>
 
-        <StackLayout VerticalOptions="Start"
-                     Margin="40,-60,40,0">
+<StackLayout VerticalOptions="Start"
+                     Margin="40,0,40,0">
 
             <Label Text="Welcome!"
                    FontSize="44"
@@ -33,7 +33,7 @@
                    TextColor ="Black" 
                    Keyboard="Text"
                    VerticalOptions="Start"/>
-
+            
             <Entry x:Name="PasswordEntry"
                    Text="{Binding Password}"
                    Placeholder="Password"

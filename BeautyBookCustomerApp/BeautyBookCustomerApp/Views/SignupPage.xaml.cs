@@ -27,7 +27,15 @@ namespace BeautyBookCustomerApp.Views
             InitializeComponent();
         }
 
+
         private async void ButtonRegister_Clicked(object sender, EventArgs e)
+
+        private void SignupButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        /*private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             CustomerModel customer = new CustomerModel();
             customer.username = username.Text;

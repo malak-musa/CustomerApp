@@ -24,6 +24,11 @@ namespace BeautyBookCustomerApp.Views
         {
             bool isLogin = await _userDB.Login(UsernameEntry.Text, PasswordEntry.Text);
             if (isLogin)
+
+        private void LoginButton_Clicked(object sender, EventArgs e)
+        {
+            if (PasswordEntry.Text == "user@gmail.com" && UsernameEntry.Text == "123456")
+
             {
                 await Navigation.PushAsync(new MainPage());
             }
