@@ -12,7 +12,7 @@ namespace BeautyBookCustomerApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookingPage3 : ContentPage
     {
-        public BookingPage3(int count)
+        public BookingPage3()
         {
             InitializeComponent();
         }

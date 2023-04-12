@@ -25,5 +25,11 @@ namespace BeautyBookCustomerApp.Views
             button.BorderWidth = 1;
             button.BorderColor = Color.DarkOliveGreen;
         }
+
+        private async void nextButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new BookingPage3());
+        }
+
     }
 }

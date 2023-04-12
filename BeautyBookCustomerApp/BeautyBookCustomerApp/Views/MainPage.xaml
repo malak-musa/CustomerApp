@@ -6,95 +6,91 @@
     
     <ContentPage.Content>
         
-        <StackLayout>
-            
-            <Grid BackgroundColor="#afc4c0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
 
-                <Frame HorizontalOptions="Start"
+            <StackLayout>
+            <Grid BackgroundColor="#afc4c0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Frame HorizontalOptions="Start"
                        CornerRadius="32.5" 
                        IsClippedToBounds="True"
                        Padding="0"  
                        BackgroundColor="#afc4c0">
-                    <Frame.Content>
+                        <Frame.Content>
 
-                        <Image Source="profile_image.jpg" 
+                            <Image Source="profile_image.jpg" 
                            WidthRequest="60" 
                            HeightRequest="65" 
                            Aspect="AspectFit" 
                            HorizontalOptions="Start" 
                            VerticalOptions="Start" />
-                    </Frame.Content>
+                        </Frame.Content>
 
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnProfileTapped" />
-                    </Frame.GestureRecognizers>
-                </Frame>
 
-                <Frame CornerRadius="10" 
+                    </Frame>
+
+                    <Frame CornerRadius="10" 
                        Padding="0" 
                        HasShadow="False" 
                        BackgroundColor="Transparent">
-                    
-                    <Image Source="search_icon.jpg" 
+
+                        <Image Source="search_icon.jpg" 
                            WidthRequest="60" 
                            HeightRequest="65" 
                            Aspect="AspectFit"
                            HorizontalOptions="End" 
                            VerticalOptions="End" 
                            Grid.Row="0" />
-                    
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnProfileTapped" />
-                    </Frame.GestureRecognizers>
-                    
+
+
+
+                    </Frame>
+
+                </Grid>
+            <Frame Margin="20,20,20,10" CornerRadius="10" >
+                    <Frame.Content >
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="salon_logo.png"  WidthRequest="80" HeightRequest="70" Margin="0,-10,10,40"   />
+                            <Label Text="Bana Salon" FontSize="Large" TextColor="Black" />
+                            <Button FontSize="16" Text="Visit" 
+                        CornerRadius="10"
+                        BackgroundColor="#3C504C" 
+                        TextColor="White"
+                        BorderWidth="0" 
+                        BorderColor="Transparent" 
+                        HorizontalOptions="Start"
+                        WidthRequest="80" 
+                        HeightRequest="40" 
+                        Margin="40,30,0,30"
+                        Clicked="VisitButton_Clicked"/>
+                        </StackLayout>
+                    </Frame.Content>
                 </Frame>
 
-            </Grid>
-
-            <Grid Margin="10,15,10,10" 
-                  BackgroundColor="#F1F1F1" >
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="200"/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="160"/>
-                </Grid.ColumnDefinitions>
-
-                <Label FontSize="Large" 
-                       Text="Bana salon" 
-                       VerticalOptions="End" 
-                       HorizontalOptions="Start"
-                       Grid.Row="0" 
-                       Grid.Column="1" 
-                       Grid.ColumnSpan="2"/>
-
-                <Image Source="location_icon.png" 
-                       WidthRequest="30" 
-                       HeightRequest="25" 
-                       Aspect="AspectFit"
-           HorizontalOptions="End" VerticalOptions="Center"
-           Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" />
-
-                <Label FontSize="Large" 
-           Text="Nablus" VerticalOptions="Center" HorizontalOptions="Start"
-           Grid.Row="1" Grid.Column="2" />
-
-                <Button FontSize="Medium" Text="Visit" CornerRadius="20" 
-    BackgroundColor="#3C504C" TextColor="White"
-    BorderWidth="0" BorderColor="Transparent" HorizontalOptions="Start"
-    Grid.Row="1" Grid.Column="3" WidthRequest="120" HeightRequest="50" Clicked="VisitButton_Clicked"/>
-
-            </Grid>
+            <Frame Margin="20,10,20,10" CornerRadius="10" >
+                <Frame.Content >
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="reena_salon.png"  WidthRequest="80" HeightRequest="70" Margin="0,-10,10,40"   />
+                        <Label Text="Reena Salon" FontSize="Large" TextColor="Black" />
+                        <Button FontSize="16" Text="Visit" 
+                        CornerRadius="10"
+                        BackgroundColor="#3C504C" 
+                        TextColor="White"
+                        BorderWidth="0" 
+                        BorderColor="Transparent" 
+                        HorizontalOptions="Start"
+                        WidthRequest="80" 
+                        HeightRequest="40" 
+                        Margin="40,30,0,30"
+                        Clicked="VisitButton_Clicked"/>
+                    </StackLayout>
+                </Frame.Content>
+            </Frame>
 
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>
