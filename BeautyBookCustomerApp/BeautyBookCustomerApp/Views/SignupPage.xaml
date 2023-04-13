@@ -5,43 +5,47 @@
              Title="        Create your account">
     
     <ContentPage.Content>
-        <Frame CornerRadius="10" 
-                    BackgroundColor="White" 
-                    Margin="30,60,30,0">
+        <StackLayout BackgroundColor="#F8F8F8">
+            <Frame CornerRadius="10" 
+               BackgroundColor="White" 
+               VerticalOptions="CenterAndExpand"
+               Margin="30,0,30,0">
 
-                <StackLayout Spacing="15">
+            <StackLayout Spacing="20" Margin="20,20,20,20">
 
                     <Entry x:Name="username"
-                            Keyboard="Text"
-                            Margin="15,20,15,5"
-                            Placeholder="Username"
-                            PlaceholderColor="#a5a5a5" 
-                            FontSize="Body" />
+                           Margin="-15,0,-15,0"
+                           Keyboard="Text"
+                           Placeholder="Username"
+                           PlaceholderColor="#a5a5a5" 
+                           FontSize="18" />
 
                     <Entry x:Name="firstName" 
-                            Margin="15,0,15,0" 
+                           Margin="-15,0,-15,0"
                             Placeholder="First Name" 
+                           
                             PlaceholderColor="#a5a5a5" 
-                            FontSize="Body" />
+                            FontSize="18" />
 
                     <Entry x:Name="lastName" 
-                            Margin="15,5,15,5" 
+                           Margin="-15,0,-15,0"
                             Placeholder="Last Name" 
                             PlaceholderColor="#a5a5a5" 
-                            FontSize="Body" />
+                            FontSize="18" />
 
                     <Entry x:Name="phoneNumber" 
+                           Margin="-15,0,-15,0"
                             Keyboard="Telephone"
-                            Margin="15,5,15,5" 
                             Placeholder="Phone Number" 
                             PlaceholderColor="#a5a5a5" 
-                            FontSize="Body" />
+                            FontSize="18" />
 
                     <Entry x:Name="password" 
-                            Margin="15,5,15,5" 
+                           Margin="-15,0,-15,0"
                             Placeholder="Password" 
-                            FontSize="Body" 
-                            PlaceholderColor="#a5a5a5" 
+                             
+                            PlaceholderColor="#a5a5a5"
+                           FontSize="18"
                             IsPassword="True" />
 
                     <Button x:Name="signupButton"
@@ -52,11 +56,12 @@
                             WidthRequest="200" 
                             FontSize="24"
                             CornerRadius="10"
-                            Margin="20,50,20,30"
+                            Margin="-15,60,-15,0"
                             Clicked="SignupButton_Clicked"/>
 
                 </StackLayout>
 
             </Frame>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
