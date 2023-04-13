@@ -1,10 +1,148 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BeautyBookCustomerApp.Views.BookingPage1">
+         x:Class="BeautyBookCustomerApp.Views.BookingPage1"
+             Title="               Appointment">
+    
     <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout Margin="10,10,20,0">
+                
+                <Label Text="Services" 
+                       TextColor="Black" 
+                       Grid.Column="0"
+                       Grid.Row="0"  Padding="20,30,10,10" 
+                       FontSize="28"/>
+        
         <StackLayout>
-            
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Hair Cut  " TextColor="Black" Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="-10,-10,-10,-10"
+                   BackgroundColor="#afc4c0">
+                    <Button Text="-" FontSize="Title" TextColor="Black" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
+                    <Frame.GestureRecognizers>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Hair Styling   " TextColor="Black" Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="-10,-10,-10,-10"
+                   BackgroundColor="#afc4c0">
+                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
+                    <Frame.GestureRecognizers>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Hair Color  " TextColor="Black" Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="-10,-10,-10,-10"
+                   BackgroundColor="#afc4c0">
+                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
+                    <Frame.GestureRecognizers>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Makeup   " TextColor="Black" Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" 
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   Padding="-10,-10,-10,-10"
+                   BackgroundColor="#afc4c0">
+                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
+                    <Frame.GestureRecognizers>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+            <Grid Margin="20" BackgroundColor="#F1F1F1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Nails   " TextColor="Black" Grid.Column="0" Grid.Row="0" 
+                    FontSize="Large"/>
+
+                <Frame Grid.Column="1" Grid.Row="0" Padding="-10,-10,-10,-10"
+                   HorizontalOptions="EndAndExpand"
+                   CornerRadius="32.5" 
+                   IsClippedToBounds="True"
+                   
+                   BackgroundColor="#afc4c0">
+                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
+                    <Frame.GestureRecognizers>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+
         </StackLayout>
-    </ContentPage.Content>
+        <Button x:Name="nextButton"
+                    Text="Next"
+                    BackgroundColor="#3C504C"
+                    TextColor="White"
+                    HeightRequest="50"
+                    WidthRequest="200" 
+                    FontSize="24"
+                    CornerRadius="10"
+                    Margin="30,30,30,30"
+                    Clicked="NextButton_Clicked"/>
+
+    </StackLayout>
+
+    </ScrollView>
+
+        </ContentPage.Content>
+
 </ContentPage>
