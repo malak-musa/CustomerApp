@@ -3,132 +3,193 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
          x:Class="BeautyBookCustomerApp.Views.BookingPage1"
              Title="               Appointment">
-    
+
     <ContentPage.Content>
 
-        <ScrollView>
-            <StackLayout Margin="10,10,20,0">
-                
-                <Label Text="Services" 
-                       TextColor="Black" 
-                       Grid.Column="0"
-                       Grid.Row="0"  Padding="20,30,10,10" 
-                       FontSize="28"/>
-        
-        <StackLayout>
-            <Grid Margin="20" BackgroundColor="#F1F1F1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Hair Cut  " TextColor="Black" Grid.Column="0" Grid.Row="0" 
-                    FontSize="Large"/>
+        <StackLayout BackgroundColor="White">
 
-                <Frame Grid.Column="1" Grid.Row="0" 
-                   HorizontalOptions="EndAndExpand"
-                   CornerRadius="32.5" 
-                   IsClippedToBounds="True"
-                   Padding="-10,-10,-10,-10"
-                   BackgroundColor="#afc4c0">
-                    <Button Text="-" FontSize="Title" TextColor="Black" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
-                    <Frame.GestureRecognizers>
-                    </Frame.GestureRecognizers>
-                </Frame>
-            </Grid>
-            <Grid Margin="20" BackgroundColor="#F1F1F1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Hair Styling   " TextColor="Black" Grid.Column="0" Grid.Row="0" 
-                    FontSize="Large"/>
+            <Label Text="Services"
+                   TextColor="Black"
+                   FontSize="24"
+                   HorizontalOptions="Start"
+                   Margin="30,50,30,0"/>
 
-                <Frame Grid.Column="1" Grid.Row="0" 
-                   HorizontalOptions="EndAndExpand"
-                   CornerRadius="32.5" 
-                   IsClippedToBounds="True"
-                   Padding="-10,-10,-10,-10"
-                   BackgroundColor="#afc4c0">
-                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
-                    <Frame.GestureRecognizers>
-                    </Frame.GestureRecognizers>
-                </Frame>
-            </Grid>
-            <Grid Margin="20" BackgroundColor="#F1F1F1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Hair Color  " TextColor="Black" Grid.Column="0" Grid.Row="0" 
-                    FontSize="Large"/>
+            <Frame BackgroundColor="#EDEDED" Margin="30,20,30,0"
+                   HeightRequest="20"
+                   CornerRadius="10">
 
-                <Frame Grid.Column="1" Grid.Row="0" 
-                   HorizontalOptions="EndAndExpand"
-                   CornerRadius="32.5" 
-                   IsClippedToBounds="True"
-                   Padding="-10,-10,-10,-10"
-                   BackgroundColor="#afc4c0">
-                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
-                    <Frame.GestureRecognizers>
-                    </Frame.GestureRecognizers>
-                </Frame>
-            </Grid>
-            <Grid Margin="20" BackgroundColor="#F1F1F1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Makeup   " TextColor="Black" Grid.Column="0" Grid.Row="0" 
-                    FontSize="Large"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
 
-                <Frame Grid.Column="1" Grid.Row="0" 
-                   HorizontalOptions="EndAndExpand"
-                   CornerRadius="32.5" 
-                   IsClippedToBounds="True"
-                   Padding="-10,-10,-10,-10"
-                   BackgroundColor="#afc4c0">
-                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
-                    <Frame.GestureRecognizers>
-                    </Frame.GestureRecognizers>
-                </Frame>
-            </Grid>
-            <Grid Margin="20" BackgroundColor="#F1F1F1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Nails   " TextColor="Black" Grid.Column="0" Grid.Row="0" 
-                    FontSize="Large"/>
+                    <Label Text="Hair Cut"
+                           FontSize="18"
+                           TextColor="Black" />
 
-                <Frame Grid.Column="1" Grid.Row="0" Padding="-10,-10,-10,-10"
-                   HorizontalOptions="EndAndExpand"
-                   CornerRadius="32.5" 
-                   IsClippedToBounds="True"
-                   
-                   BackgroundColor="#afc4c0">
-                            <Button Text="-" FontSize="Title" TextColor="Gray" Clicked="OnButtonClicked"  Padding="10,10,10,10"  />
-                    <Frame.GestureRecognizers>
-                    </Frame.GestureRecognizers>
-                </Frame>
-            </Grid>
+                    <Label Text="0"
+                           Grid.Column="2"
+                           FontSize="18"
+                           TextColor="Gray" 
+                           Padding="120,-3,0,0" />
 
-        </StackLayout>
-        <Button x:Name="nextButton"
+                    <ImageButton Grid.Column="3"
+                                 Source="minus_icon.jpg"
+                                 BackgroundColor="#EDEDED"
+                                 Margin="20,0,0,0" />
+
+                    <ImageButton Grid.Column="4"
+                                 Source="plus_icon.jpg"
+                                 BackgroundColor="#EDEDED" 
+                                 Margin="10,0,0,0" />
+                </Grid>
+            </Frame>
+
+            <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
+                   HeightRequest="20"
+                   CornerRadius="10">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Hair Style"
+                           FontSize="18"
+                           TextColor="Black" />
+
+                    <Label Text="0"
+                           Grid.Column="2"
+                           FontSize="18"
+                           TextColor="Gray" 
+                           Padding="105,-3,0,0" />
+
+                    <ImageButton Grid.Column="3"
+                                 Source="minus_icon.jpg"
+                                 BackgroundColor="#EDEDED"
+                                 Margin="20,0,0,0" />
+
+                    <ImageButton Grid.Column="4"
+                                 Source="plus_icon.jpg"
+                                 BackgroundColor="#EDEDED" 
+                                 Margin="10,0,0,0" />
+                </Grid>
+            </Frame>
+
+            <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
+                   HeightRequest="20"
+                   CornerRadius="10">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Hair Color"
+                           FontSize="18"
+                           TextColor="Black" />
+
+                    <Label Text="0"
+                           Grid.Column="2"
+                           FontSize="18"
+                           TextColor="Gray" 
+                           Padding="105,-3,0,0" />
+
+                    <ImageButton Grid.Column="3"
+                                 Source="minus_icon.jpg"
+                                 BackgroundColor="#EDEDED"
+                                 Margin="20,0,0,0" />
+
+                    <ImageButton Grid.Column="4"
+                                 Source="plus_icon.jpg"
+                                 BackgroundColor="#EDEDED" 
+                                 Margin="10,0,0,0" />
+                </Grid>
+            </Frame>
+
+            <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
+                   HeightRequest="20"
+                   CornerRadius="10">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Makeup"
+                           FontSize="18"
+                           TextColor="Black" />
+
+                    <Label Text="0"
+                           Grid.Column="2"
+                           FontSize="18"
+                           TextColor="Gray" 
+                           Padding="120,-3,0,0" />
+
+                    <ImageButton Grid.Column="3"
+                                 Source="minus_icon.jpg"
+                                 BackgroundColor="#EDEDED"
+                                 Margin="20,0,0,0" />
+
+                    <ImageButton Grid.Column="4"
+                                 Source="plus_icon.jpg"
+                                 BackgroundColor="#EDEDED" 
+                                 Margin="10,0,0,0" />
+                </Grid>
+            </Frame>
+
+            <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
+                   HeightRequest="20"
+                   CornerRadius="10">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Nails"
+                           FontSize="18"
+                           TextColor="Black" />
+
+                    <Label Text="0"
+                           Grid.Column="2"
+                           FontSize="18"
+                           TextColor="Gray" 
+                           Padding="145,-3,0,0" />
+
+                    <ImageButton Grid.Column="3"
+                                 Source="minus_icon.jpg"
+                                 BackgroundColor="#EDEDED"
+                                 Margin="20,0,0,0" />
+
+                    <ImageButton Grid.Column="4"
+                                 Source="plus_icon.jpg"
+                                 BackgroundColor="#EDEDED" 
+                                 Margin="10,0,0,0" />
+                </Grid>
+            </Frame>
+
+            <Button x:Name="nextButton"
                     Text="Next"
                     BackgroundColor="#3C504C"
                     TextColor="White"
@@ -136,13 +197,10 @@
                     WidthRequest="200" 
                     FontSize="24"
                     CornerRadius="10"
-                    Margin="30,30,30,30"
+                    Margin="30,60,30,30"
                     Clicked="NextButton_Clicked"/>
+            
 
-    </StackLayout>
-
-    </ScrollView>
-
-        </ContentPage.Content>
-
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

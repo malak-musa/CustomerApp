@@ -10,7 +10,7 @@
         
 
         <StackLayout VerticalOptions="Start"
-                     Margin="40,0,40,0">
+                     Margin="30,0,30,0">
             <Label Text="Welcome!"
                    FontSize="44"
                    FontAttributes="Bold"
@@ -51,7 +51,7 @@
                     WidthRequest="200" 
                     FontSize="24"
                     CornerRadius="10"
-                    Margin="10,50,10,0"
+                    Margin="0,50,0,0"
                     Clicked="LoginButton_Clicked"/>
 
             <Label x:Name="ErrorLabel"
