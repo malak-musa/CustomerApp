@@ -6,43 +6,60 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Frame BackgroundColor="#D5E8E4" BorderColor="#D5E8E4" CornerRadius="5" HasShadow="True" Padding="40" Margin="20,90,20,20">
+            <Frame BackgroundColor="#D5E8E4"
+                   BorderColor="#D5E8E4" 
+                   CornerRadius="10" 
+                   HasShadow="True" 
+                   Padding="40" 
+                   Margin="30,130,30,0">
+
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="salon_logo.png" WidthRequest="80" HeightRequest="70" Margin="0,-100,10,40" />
 
-                    <StackLayout Orientation="Vertical" Margin="20,0,0,0">
+                    <Image Source="salon_logo.png" 
+                           WidthRequest="80" 
+                           HeightRequest="70" 
+                           Margin="0,-160,30,40" />
 
-                        <Label Text="Bana Salon" FontSize="Large" FontAttributes="Bold" TextColor="Black" />
+                    <StackLayout Orientation="Vertical" 
+                                 Margin="0,0,0,0"
+                                 >
 
-                        <BoxView Color="#d9d9d9" HeightRequest="1" WidthRequest="100" 
-            HorizontalOptions="CenterAndExpand" Margin="10,30,10,30" />
-                        <StackLayout  Margin="-120,10,0,0" >
-                            <Label Text="Booking Details" FontSize="Medium" FontAttributes="Bold"  TextColor="Black"/>
+                        <Label Text="Bana Salon" 
+                               FontSize="Large" 
+                               FontAttributes="Bold" 
+                               TextColor="Black" />
 
 
-                            <Label Text="Date     12 April 2023" FontSize="Medium" />
-                            <Label Text="Time     3:00 PM" FontSize="Medium" />
-                            <Label Text="Services Booking (4 Services)" FontSize="Medium" />
+                        <StackLayout Margin="-120,100,0,0" Spacing="10">
+
+
+                            <Label Text="Booking Details" 
+                                   FontSize="Medium" 
+                                   FontAttributes="Bold"  
+                                   TextColor="Black" />
+                            <Label Text="Date     12 April 2023" 
+                                   FontSize="Medium" />
+                            <Label Text="Time     3:00 PM" 
+                                   FontSize="Medium" />
+                            <Label Text="Services Booking (4 Services)" 
+                                   FontSize="Medium" />
 
                         </StackLayout>
                     </StackLayout>
-
                 </StackLayout>
             </Frame>
 
-           
-
-            <Button x:Name="nextButton"
-                    Text="Next"
+            <Button x:Name="confirmButton"
+                    Text="Confirm"
                     BackgroundColor="#3C504C"
                     TextColor="White"
                     HeightRequest="50"
                     WidthRequest="200" 
                     FontSize="24"
                     CornerRadius="10"
-                    Margin="50,100,50,30" />
+                    Margin="30,100,30,30"
+                    Clicked="ConfirmButton_Clicked"/>
 
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
-

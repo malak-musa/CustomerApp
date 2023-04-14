@@ -16,5 +16,10 @@ namespace BeautyBookCustomerApp.Views
         {
             InitializeComponent();
         }
+
+        private void ConfirmButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
