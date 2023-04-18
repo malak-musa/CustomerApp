@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-         x:Class="BeautyBookCustomerApp.Views.BookingPage1"
+             x:Class="BeautyBookCustomerApp.Views.BookingPage1"
+             BackgroundColor="White"
              Title="               Appointment">
 
     <ContentPage.Content>
 
-        <StackLayout BackgroundColor="White">
+        <StackLayout>
 
             <Label Text="Services"
                    TextColor="Black"
@@ -15,7 +16,7 @@
                    Margin="30,50,30,0"/>
 
             <Frame BackgroundColor="#EDEDED" Margin="30,20,30,0"
-                   HeightRequest="20"
+                   HeightRequest="25"
                    CornerRadius="10">
 
                 <Grid>
@@ -50,7 +51,7 @@
             </Frame>
 
             <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
-                   HeightRequest="20"
+                   HeightRequest="25"
                    CornerRadius="10">
 
                 <Grid>
@@ -85,7 +86,7 @@
             </Frame>
 
             <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
-                   HeightRequest="20"
+                   HeightRequest="25"
                    CornerRadius="10">
 
                 <Grid>
@@ -120,7 +121,7 @@
             </Frame>
 
             <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
-                   HeightRequest="20"
+                   HeightRequest="25"
                    CornerRadius="10">
 
                 <Grid>
@@ -155,7 +156,7 @@
             </Frame>
 
             <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
-                   HeightRequest="20"
+                   HeightRequest="25"
                    CornerRadius="10">
 
                 <Grid>

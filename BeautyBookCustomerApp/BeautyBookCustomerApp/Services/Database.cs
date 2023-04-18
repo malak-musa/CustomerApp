@@ -13,7 +13,6 @@ namespace BeautyBookCustomerApp.Services
     {
         FirebaseClient firebaseClient = new FirebaseClient("https://beautybookapp-a44e5-default-rtdb.europe-west1.firebasedatabase.app/");
 
-
         public async Task<bool> SaveCustomerInfo(CustomerModel salon)
         {
             var data = await firebaseClient.Child(nameof(CustomerModel)).PostAsync(JsonConvert.SerializeObject(salon));
@@ -32,7 +31,7 @@ namespace BeautyBookCustomerApp.Services
 
             foreach (var item in salonInfo)
             {
-                if (item.Object.username == Username && item.Object.password == Password)
+                if (item.Object.Username == Username && item.Object.Password == Password)
                 {
                     return true;
                 }
