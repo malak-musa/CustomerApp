@@ -1,10 +1,68 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BeautyBookCustomerApp.Views.UserProfilePage">
+             x:Class="BeautyBookCustomerApp.Views.UserProfilePage"
+             Title="Appointment">
+
     <ContentPage.Content>
-        <StackLayout>
-            
+        <StackLayout x:Name="grid1">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"> 
+                        
+                    </ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                 <Frame BackgroundColor="#D5E8E4"
+                   BorderColor="#D5E8E4" 
+                   CornerRadius="10" 
+                   HasShadow="True" 
+                   Padding="40" 
+                   Margin="30,130,30,0"> 
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="profilePage" 
+                           WidthRequest="80" 
+                           HeightRequest="70"  Grid.Column="0"
+                           Margin="0,-160,30,40" />
+                    <StackLayout Orientation="Vertical" 
+                                 Margin="0,0,0,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Bana Salon" 
+                                   FontSize="Large" 
+                                   FontAttributes="Bold"  
+                                    Grid.Column="1"
+                                   TextColor="Black" />
+                            <ImageButton Source="delete_prev_ui"
+                                         CornerRadius="5"
+                                         WidthRequest="65"
+                                         HeightRequest="65"
+                                         BackgroundColor="Transparent"
+                                      
+                                         HorizontalOptions="End"
+                                         VerticalOptions="Start"
+                                          Grid.Column="2"
+                                         Margin="0,10,10,0"/> 
+                            
+                        </StackLayout>
+                        
+                        <StackLayout Margin="-120,100,0,0" Spacing="10">
+                            <Label Text="Booking Details" 
+                                   FontSize="Medium" 
+                                   FontAttributes="Bold"  
+                                   TextColor="Black" />
+                            <Label Text="Date     12 April 2023" 
+                                   FontSize="Medium" />
+                            <Label Text="Time     3:00 PM" 
+                                   FontSize="Medium" />
+                            <Label Text="Services Booking (4 Services)" 
+                                   FontSize="Medium" />
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            </Grid>
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
