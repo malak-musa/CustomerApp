@@ -9,8 +9,7 @@
             <Label Text="My Profile"
                    FontSize="20"
                    TextColor="Black"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"/>
+                   Margin="90,0,90,0"/>
         </ContentView>
     </NavigationPage.TitleView>
     

@@ -6,11 +6,10 @@
 
     <NavigationPage.TitleView>
         <ContentView>
-            <Label Text="{Binding SalonName}"
+            <Label Text="Bana Salon"
                    FontSize="20"
                    TextColor="Black"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"/>
+                   Margin="75,0,75,0"/>
         </ContentView>
     </NavigationPage.TitleView>
 

@@ -15,8 +15,7 @@
             <Label Text="Appointment"
                    FontSize="20"
                    TextColor="Black"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Center"/>
+                   Margin="75,0,75,0"/>
         </ContentView>
     </NavigationPage.TitleView>
 
