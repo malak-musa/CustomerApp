@@ -1,7 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BeautyBookCustomerApp.Views.UserProfilePage">
+             x:Class="BeautyBookCustomerApp.Views.UserProfilePage"
+             BackgroundColor="White">
+    
+    <NavigationPage.TitleView>
+        <ContentView>
+            <Label Text="My Profile"
+                   FontSize="20"
+                   TextColor="Black"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+        </ContentView>
+    </NavigationPage.TitleView>
+    
     <ContentPage.Content>
         <StackLayout>
             

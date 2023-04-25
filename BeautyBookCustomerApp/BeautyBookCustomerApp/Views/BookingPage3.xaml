@@ -2,7 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BeautyBookCustomerApp.Views.BookingPage3"
-             Title="               Appointment">
+             BackgroundColor="White">
+
+    <NavigationPage.TitleView>
+        <ContentView>
+            <Label Text="Appointment"
+                   FontSize="20"
+                   TextColor="Black"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+        </ContentView>
+    </NavigationPage.TitleView>
 
     <ContentPage.Content>
         <StackLayout>

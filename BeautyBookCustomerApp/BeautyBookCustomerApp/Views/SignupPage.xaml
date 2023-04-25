@@ -4,7 +4,11 @@
              x:Class="BeautyBookCustomerApp.Views.SignupPage"
              xmlns:local="clr-namespace:BeautyBookCustomerApp.ViewModel"
              BackgroundColor="White">
-    
+
+    <ContentPage.BindingContext>
+        <local:SignupViewModel></local:SignupViewModel>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <StackLayout>
 
