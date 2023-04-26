@@ -76,7 +76,7 @@ namespace BeautyBookCustomerApp.Views
         {
             //selectedDateLabel.Text = $"Selected date: {selectedDate.ToString("MM/dd/yyyy")}";
             selectedDateLabel.Text = $"Selected date: {selectedDate:MM/dd/yyyy}";
-            await Navigation.PushAsync(new BookingPage3());
+            await Navigation.PushAsync(new BookingPage3("3:00PM","24/22/20002", "idest"));
         }
     }
 }

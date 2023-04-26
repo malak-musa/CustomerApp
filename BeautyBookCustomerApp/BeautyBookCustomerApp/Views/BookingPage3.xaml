@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:viewmodels="clr-namespace:BeautyBookCustomerApp.ViewModel"
              x:Class="BeautyBookCustomerApp.Views.BookingPage3"
              BackgroundColor="White">
-
     <NavigationPage.TitleView>
         <ContentView>
             <Label Text="Appointment"
@@ -13,6 +13,7 @@
         </ContentView>
     </NavigationPage.TitleView>
 
+    
     <ContentPage.Content>
         <StackLayout>
             <Frame BackgroundColor="#D5E8E4"
@@ -32,7 +33,7 @@
                     <StackLayout Orientation="Vertical" 
                                  Margin="0,0,0,0">
 
-                        <Label Text="Bana Salon" 
+                        <Label Text="{Binding SalonName}" 
                                FontSize="Large" 
                                FontAttributes="Bold" 
                                TextColor="Black" />
@@ -44,9 +45,9 @@
                                    FontSize="Medium" 
                                    FontAttributes="Bold"  
                                    TextColor="Black" />
-                            <Label Text="Date     12 April 2023" 
+                            <Label Text="{Binding time}" 
                                    FontSize="Medium" />
-                            <Label Text="Time     3:00 PM" 
+                            <Label Text="{Binding date}" 
                                    FontSize="Medium" />
                             <Label Text="Services Booking (4 Services)" 
                                    FontSize="Medium" />

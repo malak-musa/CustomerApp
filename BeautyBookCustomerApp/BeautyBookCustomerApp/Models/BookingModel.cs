@@ -12,5 +12,7 @@ namespace BeautyBookCustomerApp.Models
         public List<string> Services { get; set; }
         public string Date { get; set; }
         public string Time { get; set; }
+
+        
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Firebase.Database;
 using Newtonsoft.Json;
 using Nest;
+using System.Collections.ObjectModel;
 
 namespace BeautyBookCustomerApp.Services
 {
@@ -39,5 +40,13 @@ namespace BeautyBookCustomerApp.Services
 
             return false;
         }
+        public ObservableCollection<BookingModelPage3> BookingPage()
+        {
+            var Users_Customer = firebaseClient.Child("Salon").AsObservable<BookingModelPage3>().AsObservableCollection();
+
+
+            return Users_Customer;
+        }
     }
+
 }
