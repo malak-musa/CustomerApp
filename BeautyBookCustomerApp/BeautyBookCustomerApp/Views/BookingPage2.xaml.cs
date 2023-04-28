@@ -1,11 +1,7 @@
 ﻿using BeautyBookCustomerApp.Models;
-using Firebase.Database;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,12 +12,14 @@ namespace BeautyBookCustomerApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookingPage2 : ContentPage
     {
-        private DateTime selectedDate;
+        public DateTime selectedDate;
+        private static Button previousTimeButton = null;
         private static string selectedTime = null;
-        private static Button previousButton = null;
+        public string selectedTimeText = null;
+        List<string> serviceListParameter;
         ObservableCollection<TimeModel> timeModel;
 
-        public BookingPage2()
+        public BookingPage2(List<string> ServiceList)
         {
             InitializeComponent();
 
@@ -42,7 +40,9 @@ namespace BeautyBookCustomerApp.Views
                 new TimeModel{Time = "05:00 PM"},
                 new TimeModel{Time = "06:00 PM"},
             };
+
             Times.ItemsSource = timeModel;
+            serviceListParameter = ServiceList;
         }
 
         private void OnDateSelected(object sender, DateTimeEventArgs e)
@@ -54,14 +54,14 @@ namespace BeautyBookCustomerApp.Views
         {
             var button = sender as Button;
             var time = button.BindingContext as string;
-            //var text = button.Text;
+            selectedTimeText = button.Text;
 
-            if (previousButton != null)
+            if (previousTimeButton != null)
             {
-                previousButton.TextColor = Color.Black;
-                previousButton.BackgroundColor = Color.White;
-                previousButton.BorderWidth = 1.5;
-                previousButton.BorderColor = Color.LightGray;
+                previousTimeButton.TextColor = Color.Black;
+                previousTimeButton.BackgroundColor = Color.White;
+                previousTimeButton.BorderWidth = 1.5;
+                previousTimeButton.BorderColor = Color.LightGray;
             }
 
             selectedTime = time;
@@ -69,14 +69,12 @@ namespace BeautyBookCustomerApp.Views
             button.BorderColor = Color.Transparent;
             button.TextColor = Color.White;
 
-            previousButton = button;
+            previousTimeButton = button;
         }
-
+        
         private async void NextButton_Clicked(object sender, EventArgs e)
         {
-            //selectedDateLabel.Text = $"Selected date: {selectedDate.ToString("MM/dd/yyyy")}";
-            selectedDateLabel.Text = $"Selected date: {selectedDate:MM/dd/yyyy}";
-            await Navigation.PushAsync(new BookingPage3());
+            await Navigation.PushAsync(new BookingPage3(serviceListParameter, selectedDate, selectedTimeText));
         }
     }
 }
