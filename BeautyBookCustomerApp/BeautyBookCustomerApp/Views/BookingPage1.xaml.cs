@@ -15,6 +15,7 @@ namespace BeautyBookCustomerApp.Views
         public BookingPage1()
         {
             InitializeComponent();
+
         }
         private bool isLabelClicked = false;
         private void OnLabelTapped(object sender, EventArgs e)
@@ -34,6 +35,7 @@ namespace BeautyBookCustomerApp.Views
         }
         private bool isButtonClicked = false;
 
+        
         private void OnButtonClicked(object sender, EventArgs e)
         {
             var button = (Button)sender;
@@ -49,12 +51,36 @@ namespace BeautyBookCustomerApp.Views
                 isButtonClicked = false;
             }
         }
+        
+        public int serviceNumber=0;
+        public List<string> serviceList = new List<string>();
+
+        private void plusButtonClicked(object sender, EventArgs e)
+        {
+            serviceNumber++;
+            serviceNumLabel.Text = serviceNumber.ToString();
+            if (serviceNumber == 1)
+            {
+                serviceList.Add(serviceName.Text);
+            }
+        }
+
+        private void minusButtonClicked(object sender, EventArgs e)
+        {
+            if (serviceNumber >= 1)
+            {
+               serviceNumber--;
+               serviceNumLabel.Text = serviceNumber.ToString();
+            }
+            if (serviceNumber == 0)
+            {
+              serviceList.Remove(serviceName.Text);
+            }
+        }
 
         private async void NextButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BookingPage2());
+            await Navigation.PushAsync(new BookingPage2(serviceList));
         }
-
-
     }
 }
