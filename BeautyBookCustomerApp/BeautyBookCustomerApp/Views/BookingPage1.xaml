@@ -209,6 +209,7 @@
             <Button x:Name="nextButton"
                     Text="Next"
                     BackgroundColor="#3C504C"
+                    TextColor="White"
                     HeightRequest="50"
                     WidthRequest="200" 
                     FontSize="22"

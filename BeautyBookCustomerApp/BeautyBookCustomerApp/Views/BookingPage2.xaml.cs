@@ -62,6 +62,8 @@ namespace BeautyBookCustomerApp.Views
                 previousTimeButton.BackgroundColor = Color.White;
                 previousTimeButton.BorderWidth = 1.5;
                 previousTimeButton.BorderColor = Color.LightGray;
+
+                previousTimeButton.IsVisible = true;
             }
 
             selectedTime = time;
@@ -70,8 +72,10 @@ namespace BeautyBookCustomerApp.Views
             button.TextColor = Color.White;
 
             previousTimeButton = button;
+
+            button.IsVisible = false;
         }
-        
+
         private async void NextButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new BookingPage3(serviceListParameter, selectedDate, selectedTimeText));

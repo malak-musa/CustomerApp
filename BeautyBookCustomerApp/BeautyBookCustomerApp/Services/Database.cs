@@ -59,11 +59,11 @@ namespace BeautyBookCustomerApp.Services
             return false;
         }
 
-        public async Task<List<SalonInformationModel>> GetSalonsAsync()
+        /*public async Task<List<SalonInformationModel>> GetSalonsAsync()
         {
             var salons = await firebaseClient.Child(nameof(SalonInformationModel)).OnceAsync<SalonInformationModel>();
             return salons.Select(x => x.Object).ToList();
-        }
+        }*/
 
         /*public async Task<List<SalonInformationModel>> GetAllSalons()
         {
@@ -80,7 +80,8 @@ namespace BeautyBookCustomerApp.Services
                 dayOff = salon.Object.dayOff
             }).ToList();
         }*/
-        public async Task<List<SalonInformationModel>> GetAllSalons()
+
+        /*public async Task<List<SalonInformationModel>> GetAllSalons()
         {
             var salonList = (await firebaseClient
                 .Child(nameof(SalonInformationModel))
@@ -93,6 +94,6 @@ namespace BeautyBookCustomerApp.Services
                 }).ToList();
 
             return salonList;
-        }
+        }*/
     }
 }
