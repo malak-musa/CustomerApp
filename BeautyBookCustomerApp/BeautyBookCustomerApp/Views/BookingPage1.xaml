@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-         x:Class="BeautyBookCustomerApp.Views.BookingPage1"
-             Title="               Appointment">
+             x:Class="BeautyBookCustomerApp.Views.BookingPage1"
+             BackgroundColor="White">
+
+    <NavigationPage.TitleView>
+        <ContentView>
+            <Label Text="Appointment"
+                   FontSize="20"
+                   TextColor="Black"
+                   Margin="75,0,75,0"/>
+        </ContentView>
+    </NavigationPage.TitleView>
 
     <ContentPage.Content>
 
-        <StackLayout BackgroundColor="White">
+        <StackLayout>
 
             <Label Text="Services"
                    TextColor="Black"
@@ -14,8 +23,9 @@
                    HorizontalOptions="Start"
                    Margin="30,50,30,0"/>
 
-            <Frame BackgroundColor="#EDEDED" Margin="30,20,30,0"
-                   HeightRequest="20"
+            <Frame BackgroundColor="#EDEDED" 
+                   Margin="30,20,30,0"
+                   HeightRequest="25"
                    CornerRadius="10">
 
                 <Grid>
@@ -28,10 +38,11 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Text="Hair Cut"
+                           x:Name="serviceName"
                            FontSize="18"
                            TextColor="Black" />
 
-                    <Label Text="0"
+                    <Label x:Name="serviceNumLabel"
                            Grid.Column="2"
                            FontSize="18"
                            TextColor="Gray" 
@@ -40,17 +51,20 @@
                     <ImageButton Grid.Column="3"
                                  Source="minus_icon.jpg"
                                  BackgroundColor="#EDEDED"
-                                 Margin="20,0,0,0" />
+                                 Margin="20,0,0,0"  
+                                 Clicked="minusButtonClicked"/>
 
                     <ImageButton Grid.Column="4"
                                  Source="plus_icon.jpg"
                                  BackgroundColor="#EDEDED" 
-                                 Margin="10,0,0,0" />
+                                 Margin="10,0,0,0"
+                                 Clicked="plusButtonClicked"/>
                 </Grid>
             </Frame>
 
-            <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
-                   HeightRequest="20"
+            <Frame BackgroundColor="#EDEDED" 
+                   Margin="30,15,30,0"
+                   HeightRequest="25"
                    CornerRadius="10">
 
                 <Grid>
@@ -84,8 +98,9 @@
                 </Grid>
             </Frame>
 
-            <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
-                   HeightRequest="20"
+            <Frame BackgroundColor="#EDEDED" 
+                   Margin="30,15,30,0"
+                   HeightRequest="25"
                    CornerRadius="10">
 
                 <Grid>
@@ -119,8 +134,9 @@
                 </Grid>
             </Frame>
 
-            <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
-                   HeightRequest="20"
+            <Frame BackgroundColor="#EDEDED" 
+                   Margin="30,15,30,0"
+                   HeightRequest="25"
                    CornerRadius="10">
 
                 <Grid>
@@ -154,8 +170,9 @@
                 </Grid>
             </Frame>
 
-            <Frame BackgroundColor="#EDEDED" Margin="30,15,30,0"
-                   HeightRequest="20"
+            <Frame BackgroundColor="#EDEDED" 
+                   Margin="30,15,30,0"
+                   HeightRequest="25"
                    CornerRadius="10">
 
                 <Grid>
@@ -192,14 +209,12 @@
             <Button x:Name="nextButton"
                     Text="Next"
                     BackgroundColor="#3C504C"
-                    TextColor="White"
                     HeightRequest="50"
                     WidthRequest="200" 
-                    FontSize="24"
+                    FontSize="22"
                     CornerRadius="10"
                     Margin="30,60,30,30"
                     Clicked="NextButton_Clicked"/>
-            
 
         </StackLayout>
     </ContentPage.Content>

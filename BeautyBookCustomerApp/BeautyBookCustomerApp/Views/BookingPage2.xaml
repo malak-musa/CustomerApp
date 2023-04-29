@@ -1,122 +1,109 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BeautyBookCustomerApp.Views.BookingPage2"
-             xmlns:xc="clr-namespace:XCalendar;assembly=XCalendar"
-             Title="               Appointment">
+             x:Class="BeautyBookCustomerApp.Views.BookingPage2"              
+             xmlns:xamForms="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+             xmlns:local="clr-namespace:BeautyBookCustomerApp.ViewModel"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <local:BookingPage2ViewModel></local:BookingPage2ViewModel>
+    </ContentPage.BindingContext>
+    
+    <NavigationPage.TitleView>
+        <ContentView>
+            <Label Text="Appointment"
+                   FontSize="20"
+                   TextColor="Black"
+                   Margin="75,0,75,0"/>
+        </ContentView>
+    </NavigationPage.TitleView>
 
     <ContentPage.Content>
+        <StackLayout Margin="30,50,30,0">
 
-        <ScrollView>
-            <StackLayout>
-
-                <Frame Margin="20,50,20,0"
-                   VerticalOptions="Center"
-                   BackgroundColor="#F5F5F5"
-                   WidthRequest="100"
-                   BorderColor="#F5F5F5"
+            <Frame BackgroundColor="#F8F8F8"
                    CornerRadius="20">
 
-                    <xc:CalendarView x:Name="calender"
-                                 NavigationTextColor="Black"
-                                 WidthRequest="260"
-                                 HeightRequest="360"
-                                 BackgroundColor="#F5F5F5"
-                                 NavigationBackgroundColor="#F5F5F5"
-                                 DayNameTextColor="#585858"
-                                 NavigationArrowColor="Black" />
-                </Frame>
+                <xamForms:Calendar x:Name="Calendar"
+                                   BackgroundColor="#F9F9F9"
+                                   BorderColor="Transparent"
+                                   DatesBackgroundColor="#F9F9F9"
+                                   DatesTextColorOutsideMonth="#BCBCBC"
+                                   DatesBackgroundColorOutsideMonth="#F9F9F9"
+                                   TitleLabelFontAttributes="None"
+                                   TitleLabelFontSize="20"
+                                   TitleLabelHorizontalTextAlignment="Center"
+                                   TitleLabelVerticalTextAlignment="Start"                               
+                                   TitleRightArrowText="" 
+                                   TitleLeftArrowText=""                               
+                                   TitleLeftArrowImage="left_arrow_icon.png"
+                                   TitleRightArrowImage="right_arrow_icon.png"
+                                   WeekdaysFontSize="16"
+                                   DatesFontSize="16"
+                                   MultiSelectDates="False"
+                                   WeekdaysTextColor="Gray"
+                                   SelectedTextColor="White"
+                                   SelectedBackgroundColor="#3C504C"
+                                   SelectedBorderColor="#3C504C"
+                                   SelectedFontSize="18"
+                                   SelectedBorderWidth="2"
+                                   Padding="5,0,5,0" 
+                                   DisabledBorderColor="Transparent"
+                                   DisabledBackgroundColor="#F9F9F9"
+                                   DisabledTextColor="#d7d7d5"
+                                   DisabledFontSize="13"/>
+            </Frame>
 
+            <Label x:Name="selectedDateLabel" TextColor="White" />
 
-                <Label Text="Pick a time interval" 
+            <Label Text="Pick a time interval" 
                    TextColor="Black" 
                    FontSize="18" 
-                   Margin="35,30,0,15" />
+                   Margin="15,10,0,0" />
 
-                <Grid HorizontalOptions="Center" ColumnSpacing="20" RowSpacing="10">
+            <CollectionView x:Name="Times" 
+                            Margin="10,0,10,0"                        
+                            HeightRequest="100">
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="Auto" />
-                    </Grid.ColumnDefinitions>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal"/>
+                </CollectionView.ItemsLayout>
 
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Button Grid.Column="0" 
+                                    Text="{Binding Time}" 
+                                    HorizontalOptions="Center"
+                                    Margin="5,10,5,0"
+                                    FontSize="16"
+                                    TextColor="Black"
+                                    CornerRadius="5"
+                                    BackgroundColor="White"
+                                    BorderWidth="1.5"
+                                    BorderColor="LightGray"
+                                    Clicked="SelectTime"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-                    <Button Grid.Column="0" Grid.Row="0"
-                        Text="9:00 AM"
-                        TextColor="White"
-                        CornerRadius="10"
-                        BackgroundColor="#3C504C"
-                        Clicked="SelectTime"/>
-
-                    <Button Grid.Column="1" Grid.Row="0"
-                        Text="12:00 PM"
-                        TextColor="White"
-                        CornerRadius="10"
-                        BackgroundColor="#3C504C"
-                        />
-
-                    <Button Grid.Column="2" Grid.Row="0"
-                        Text="3:00 PM"
-                        TextColor="White"
-                        CornerRadius="10"
-                         BackgroundColor="#3C504C" />
-
-                    <Button Grid.Column="0" Grid.Row="1"
-                        Text="10:00 AM"
-                        TextColor="White"
-                        CornerRadius="10"
-                        BackgroundColor="#3C504C" />
-
-                    <Button Grid.Column="1" Grid.Row="1"
-                        Text="1:00 PM"
-                        TextColor="White"
-                        CornerRadius="10"
-                         BackgroundColor="#3C504C" />
-
-                    <Button Grid.Column="2" Grid.Row="1"
-                        Text="4:00 PM"
-                        TextColor="White"
-                        CornerRadius="10"
-                         BackgroundColor="#3C504C" />
-
-                    <Button Grid.Column="0" Grid.Row="2"
-                        Text="11:00 PM"
-                        TextColor="White"
-                        CornerRadius="10"
-                        BackgroundColor="#3C504C" />
-
-                    <Button Grid.Column="1" Grid.Row="2"
-                        Text="2:00 PM"
-                        TextColor="White"
-                        CornerRadius="10"
-                         BackgroundColor="#3C504C" />
-
-                    <Button Grid.Column="2" Grid.Row="2"
-                        Text="5:00 PM"
-                        TextColor="White"
-                        CornerRadius="10"
-                         BackgroundColor="#3C504C" />
-
-                </Grid>
-
-                <Button x:Name="nextButton"
+            <Button x:Name="NextButton"
                     Text="Next"
                     BackgroundColor="#3C504C"
                     TextColor="White"
                     HeightRequest="50"
                     WidthRequest="200" 
-                    FontSize="24"
+                    FontSize="22"
                     CornerRadius="10"
-                    Margin="30,30,30,30"
-                    Clicked="nextButton_Clicked"/>
-
-
-            </StackLayout>
-
-        </ScrollView>
-
+                    Clicked="NextButton_Clicked"/>
+        </StackLayout>
     </ContentPage.Content>
-
 </ContentPage>
-    

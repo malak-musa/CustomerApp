@@ -2,66 +2,105 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BeautyBookCustomerApp.Views.SignupPage"
-             Title="        Create your account">
-    
+             xmlns:local="clr-namespace:BeautyBookCustomerApp.ViewModel"
+             BackgroundColor="White">
+
+    <ContentPage.BindingContext>
+        <local:SignupViewModel></local:SignupViewModel>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#F8F8F8">
-            <Frame CornerRadius="10" 
-               BackgroundColor="White" 
-               VerticalOptions="CenterAndExpand"
-               Margin="30,0,30,0">
+        <StackLayout>
 
-            <StackLayout Spacing="20" Margin="20,20,20,20">
+            <Label Text="Create Account"
+                   TextColor="Black"
+                   FontSize="35"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Start"
+                   Margin="40,20,0,0"/>
 
-                    <Entry x:Name="username"
-                           Margin="-15,0,-15,0"
-                           Keyboard="Text"
-                           Placeholder="Username"
-                           PlaceholderColor="#a5a5a5" 
-                           FontSize="18" />
+            <StackLayout Spacing="10">
 
-                    <Entry x:Name="firstName" 
-                           Margin="-15,0,-15,0"
-                            Placeholder="First Name" 
-                           
-                            PlaceholderColor="#a5a5a5" 
-                            FontSize="18" />
+                <Entry x:Name="FirstName"
+                       Text="{Binding FirstName}"
+                       Placeholder="First Name"
+                       FontSize="18"
+                       PlaceholderColor="#B5B5B5"
+                       TextColor ="Black" 
+                       Keyboard="Text"
+                       Margin="40,30,40,0"/>
+                
+                <Entry x:Name="LastName"
+                       Text="{Binding LastName}"
+                       Placeholder="Last Name"
+                       FontSize="18"
+                       PlaceholderColor="#B5B5B5"
+                       TextColor ="Black" 
+                       Keyboard="Text"
+                       Margin="40,0,40,0"/>
 
-                    <Entry x:Name="lastName" 
-                           Margin="-15,0,-15,0"
-                            Placeholder="Last Name" 
-                            PlaceholderColor="#a5a5a5" 
-                            FontSize="18" />
+                <Entry x:Name="Username"
+                       Text="{Binding Username}"
+                       Placeholder="Username"
+                       FontSize="18"
+                       PlaceholderColor="#B5B5B5"
+                       TextColor ="Black" 
+                       Keyboard="Text"
+                       Margin="40,0,40,0"/>
 
-                    <Entry x:Name="phoneNumber" 
-                           Margin="-15,0,-15,0"
-                            Keyboard="Telephone"
-                            Placeholder="Phone Number" 
-                            PlaceholderColor="#a5a5a5" 
-                            FontSize="18" />
-
-                    <Entry x:Name="password" 
-                           Margin="-15,0,-15,0"
-                            Placeholder="Password" 
-                             
-                            PlaceholderColor="#a5a5a5"
+                <Grid>
+                    <Entry x:Name="Password"
+                           Text="{Binding Password}"
+                           Placeholder="Password"
                            FontSize="18"
-                            IsPassword="True" />
+                           PlaceholderColor="#B5B5B5"
+                           TextColor ="Black" 
+                           Margin="40,0,40,0"
+                           Keyboard="Text"
+                           IsPassword="{Binding Source={x:Reference ShowPasswordButtonTrigger}, 
+                                                Path = HidePassword}" />
 
-                    <Button x:Name="signupButton"
-                            Text="Signup"
-                            BackgroundColor="#3C504C"
-                            TextColor="White"
-                            HeightRequest="50"
-                            WidthRequest="200" 
-                            FontSize="24"
-                            CornerRadius="10"
-                            Margin="-15,60,-15,0"
-                            Clicked="SignupButton_Clicked"/>
+                    <ImageButton Source="hide_eye_icon.png"
+                                 VerticalOptions="Center"
+                                 HorizontalOptions="End"
+                                 HeightRequest="20"
+                                 Margin="0,0,55,7"
+                                 BackgroundColor="White">
 
-                </StackLayout>
+                        <ImageButton.Triggers>
+                            <EventTrigger Event="Clicked">
+                                <local:ShowPassword ShowIcon="eye_icon.png"
+                                                                 HideIcon="hide_eye_icon.png"
+                                                                 x:Name="ShowPasswordButtonTrigger"/>
+                            </EventTrigger>
+                        </ImageButton.Triggers>
+                    </ImageButton>
 
-            </Frame>
+                </Grid>
+
+                <Entry x:Name="PhoneNumber"
+                       Text="{Binding PhoneNumber}"
+                       Placeholder="Phone Number"
+                       FontSize="18"
+                       PlaceholderColor="#B5B5B5"
+                       TextColor ="Black" 
+                       Keyboard="Telephone"
+                       Margin="40,0,40,0"/>
+            </StackLayout>
+
+
+            <Button x:Name="SignupButton"
+                    Text="Sign up"
+                    BackgroundColor="#3C504C"
+                    TextColor="White"
+                    HeightRequest="50"
+                    WidthRequest="200" 
+                    FontSize="20"
+                    CornerRadius="10"
+                    Margin="40,0,40,100"
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="SignupButton_Clicked" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
