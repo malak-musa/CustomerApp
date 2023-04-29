@@ -52,10 +52,6 @@ namespace BeautyBookCustomerApp.Services
 
             }
 
-
-
-
-
             return false;
         }
 
