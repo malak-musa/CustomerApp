@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Firebase.Database;
 using Newtonsoft.Json;
 using Nest;
+using System.Linq;
+using Xamarin.Essentials;
 
 namespace BeautyBookCustomerApp.Services
 {
@@ -28,9 +30,9 @@ namespace BeautyBookCustomerApp.Services
 
         public async Task<bool> Login(string Username, string Password)
         {
-            var salonInfo = await firebaseClient.Child(nameof(CustomerModel)).OnceAsync<CustomerModel>();
+            var customerInfo = await firebaseClient.Child(nameof(CustomerModel)).OnceAsync<CustomerModel>();
 
-            foreach (var item in salonInfo)
+            foreach (var item in customerInfo)
             {
                 if (item.Object.username == Username && item.Object.password == Password)
                 {
@@ -39,6 +41,59 @@ namespace BeautyBookCustomerApp.Services
             }
 
             return false;
+        }
+
+        public async Task<bool> SaveAppointmentInformation(BookingModel bookingInfo)
+        {
+            var data = await firebaseClient.Child(nameof(BookingModel)).PostAsync(JsonConvert.SerializeObject(bookingInfo));
+
+            if (!string.IsNullOrEmpty(data.Key))
+            {
+                return true;
+
+            }
+
+
+
+
+
+            return false;
+        }
+
+        public async Task<List<SalonInformationModel>> GetSalonsAsync()
+        {
+            var salons = await firebaseClient.Child(nameof(SalonInformationModel)).OnceAsync<SalonInformationModel>();
+            return salons.Select(x => x.Object).ToList();
+        }
+
+        /*public async Task<List<SalonInformationModel>> GetAllSalons()
+        {
+            return (await firebaseClient.Child(nameof(SalonInformationModel)).OnceAsync<SalonInformationModel>()).Select(salon => new SalonInformationModel
+            {
+                password = salon.Object.password,
+                salonName = salon.Object.salonName,
+                salonType = salon.Object.salonType,
+                userID = salon.Object.userID,
+                address = salon.Object.address,
+                city = salon.Object.city,
+                services = salon.Object.services,
+                openingHours = salon.Object.openingHours,
+                dayOff = salon.Object.dayOff
+            }).ToList();
+        }*/
+        public async Task<List<SalonInformationModel>> GetAllSalons()
+        {
+            var salonList = (await firebaseClient
+                .Child(nameof(SalonInformationModel))
+                .OnceAsync<SalonInformationModel>())
+                .Select(salon => new SalonInformationModel
+                {
+                    salonName = salon.Object.salonName,
+                    address = salon.Object.address,
+                    phoneNumber = salon.Object.phoneNumber
+                }).ToList();
+
+            return salonList;
         }
     }
 }

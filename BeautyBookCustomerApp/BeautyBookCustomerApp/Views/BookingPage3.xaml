@@ -5,61 +5,70 @@
              Title="               Appointment">
 
     <ContentPage.Content>
-        <StackLayout>
-            <Frame BackgroundColor="#D5E8E4"
+        <ScrollView>
+            <StackLayout>
+
+                <Frame BackgroundColor="#D5E8E4"
                    BorderColor="#D5E8E4" 
                    CornerRadius="10" 
                    HasShadow="True" 
-                   Padding="40" 
-                   Margin="30,130,30,0">
+                   Padding="50" 
+                   HeightRequest="250"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="30,120,30,0">
 
-                <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal">
 
-                    <Image Source="salon_logo.png" 
+                        <Image Source="salon_logo.png" 
                            WidthRequest="80" 
                            HeightRequest="70" 
-                           Margin="0,-160,30,40" />
+                           Margin="0,-160,30,10" />
 
-                    <StackLayout Orientation="Vertical" 
-                                 Margin="0,0,0,0"
-                                 >
+                        <StackLayout Orientation="Vertical" 
+                                 Margin="0,0,0,0">
 
-                        <Label Text="Bana Salon" 
+                            <Label Text="Bana Salon" 
+                               x:Name="SalonNameLabel"
                                FontSize="Large" 
                                FontAttributes="Bold" 
-                               TextColor="Black" />
+                               TextColor="Black" 
+                               Margin="0,10,0,0"/>
 
+                            <StackLayout Margin="-120,100,0,0" 
+                                     Spacing="10">
 
-                        <StackLayout Margin="-120,100,0,0" Spacing="10">
-
-
-                            <Label Text="Booking Details" 
-                                   FontSize="Medium" 
+                                <Label Text="Booking Details" 
+                                   FontSize="20"
                                    FontAttributes="Bold"  
                                    TextColor="Black" />
-                            <Label Text="Date     12 April 2023" 
-                                   FontSize="Medium" />
-                            <Label Text="Time     3:00 PM" 
-                                   FontSize="Medium" />
-                            <Label Text="Services Booking (4 Services)" 
-                                   FontSize="Medium" />
 
+                                <Label x:Name="selectedDateLabel"
+                                   FontSize="16" />
+
+                                <Label x:Name="selectedTimeLabel"
+                                   FontSize="16" />
+
+                                <Label x:Name="selectedServices"
+                                   FontSize="16" />
+
+                            </StackLayout>
                         </StackLayout>
                     </StackLayout>
-                </StackLayout>
-            </Frame>
+                </Frame>
 
-            <Button x:Name="confirmButton"
+                <Button x:Name="confirmButton"
                     Text="Confirm"
                     BackgroundColor="#3C504C"
                     TextColor="White"
                     HeightRequest="50"
                     WidthRequest="200" 
-                    FontSize="24"
+                    FontSize="22"
                     CornerRadius="10"
-                    Margin="30,100,30,30"
+                    Margin="30,100,30,100"
                     Clicked="ConfirmButton_Clicked"/>
 
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
