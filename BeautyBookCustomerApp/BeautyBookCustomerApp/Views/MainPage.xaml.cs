@@ -24,7 +24,7 @@ namespace BeautyBookCustomerApp.Views
     
         private async void VisitButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SalonProfilePage());
+            await Navigation.PushAsync(new SalonProfilePage("34|tqo"));
         }
     }
 }

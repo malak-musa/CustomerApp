@@ -3,20 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BeautyBookCustomerApp.Views.SalonProfilePage"
              BackgroundColor="White">
-
+   
     <NavigationPage.TitleView>
         <ContentView>
-            <Label Text="Bana Salon"
+            <Label Text="{Binding SalonName}"
                    FontSize="20"
                    TextColor="Black"
                    Margin="75,0,75,0"/>
         </ContentView>
     </NavigationPage.TitleView>
-
+  
     <ContentPage.Content>
         <StackLayout Padding="10">
 
-            <Image Source="profile_cover.jpg" 
+            <Image Source="{Binding ImagURL}" 
                    Aspect="AspectFill" 
                    HeightRequest="190" 
                    Margin="-10,-10,-10,-70"/>
@@ -28,7 +28,7 @@
                        Margin="0,40,0,0" />
 
                 <StackLayout Orientation="Vertical" Margin="20,10,0,0">
-                    <Label Text="&#x0a;&#x0a;&#x0a;"/>
+                    <Label Text="{Binding SalonName}"/>
                     <Button Text="Appointment" 
                             FontSize="Small" 
                             BackgroundColor="#3C504C" 
@@ -76,7 +76,7 @@
                            WidthRequest="30" 
                            HeightRequest="30" 
                            Margin="5,0,0,0"/>
-                    <Label Text="Tal Roundabout, New Nablus" 
+                    <Label Text="{Binding Address}" 
                            FontSize="Small" 
                            Margin="3,5,0,0" />
                 </StackLayout>
@@ -87,7 +87,7 @@
                            WidthRequest="20" 
                            HeightRequest="30" 
                            Margin="10,0,0,0"/>
-                    <Label Text="Opening Hours 10:00 AM - 6:00 PM" 
+                    <Label Text="{Binding OpeingHoures}" 
                            FontSize="Small" 
                            Margin="10,5,0,0" />
                 </StackLayout>
@@ -99,7 +99,7 @@
                            WidthRequest="30" 
                            HeightRequest="30"
                            Margin="6,0,0,0"/>
-                    <Label Text="Days Off Monday" 
+                    <Label Text="{Binding DaysOff}" 
                            FontSize="Small" 
                            Margin="3,5,0,0" />
                 </StackLayout>

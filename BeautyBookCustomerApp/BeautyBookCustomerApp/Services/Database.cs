@@ -41,7 +41,23 @@ namespace BeautyBookCustomerApp.Services
 
             return false;
         }
+<<<<<<< Updated upstream
+=======
+        public ObservableCollection<BookingModelPage3> BookingPage()
+        {
+            var Users_Customer = firebaseClient.Child("Salon").AsObservable<BookingModelPage3>().AsObservableCollection();
 
+
+            return Users_Customer;
+        }
+        public ObservableCollection<SalonInformationModel> getSalonProfile()
+        {
+            var soalnCustomer = firebaseClient.Child("SalonProfile").AsObservable<SalonInformationModel>().AsObservableCollection();
+>>>>>>> Stashed changes
+
+
+            return soalnCustomer;
+        }
         public async Task<bool> SaveAppointmentInformation(BookingModel bookingInfo)
         {
             var data = await firebaseClient.Child(nameof(BookingModel)).PostAsync(JsonConvert.SerializeObject(bookingInfo));

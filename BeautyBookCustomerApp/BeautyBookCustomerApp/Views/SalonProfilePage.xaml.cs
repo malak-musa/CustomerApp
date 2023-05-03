@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BeautyBookCustomerApp.Views;
+using BeautyBookCustomerApp.ViewModel;
+using Firebase.Auth;
+using Nest;
 
 namespace BeautyBookCustomerApp.Views
 {
@@ -18,9 +21,11 @@ namespace BeautyBookCustomerApp.Views
             public string LabelText { get; set; }
         }
 
-        public SalonProfilePage()
+        public SalonProfilePage(string userID)
         {
             InitializeComponent();
+            SalonProfileViewModel salonProfileViewModel = new SalonProfileViewModel(userID);
+            BindingContext = new SalonProfileViewModel(userID);
 
         }
 
