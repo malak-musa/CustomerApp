@@ -78,7 +78,7 @@ namespace BeautyBookCustomerApp.Views
 
         private async void NextButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BookingPage3(serviceListParameter, selectedDate, selectedTimeText));
+            await Navigation.PushAsync(new BookingPage3("s", "24/5/2023", "9:90"));
         }
     }
 }

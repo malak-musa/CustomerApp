@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:viewmodels="clr-namespace:BeautyBookCustomerApp.ViewModel"
              x:Class="BeautyBookCustomerApp.Views.BookingPage3"
              BackgroundColor="White">
-
     <NavigationPage.TitleView>
         <ContentView>
             <Label Text="Appointment"
@@ -12,6 +12,7 @@
                    Margin="75,0,75,0"/>
         </ContentView>
     </NavigationPage.TitleView>
+
 
     <ContentPage.Content>
 
@@ -37,8 +38,8 @@
                     <StackLayout Orientation="Vertical" 
                                  Margin="0,0,0,0">
 
-                        <Label Text="Bana Salon" 
-                               x:Name="SalonNameLabel"
+                        <Label Text="{Binding SalonName}" 
+
                                FontSize="Large" 
                                FontAttributes="Bold" 
                                TextColor="Black" 
@@ -51,15 +52,13 @@
                                    FontSize="20"
                                    FontAttributes="Bold"  
                                    TextColor="Black" />
+                            <Label Text="{Binding time}" 
+                                   FontSize="Medium" />
+                            <Label Text="{Binding date}" 
+                                   FontSize="Medium" />
+                            <Label Text="Services Booking (4 Services)" 
+                                   FontSize="Medium" />
 
-                            <Label x:Name="selectedDateLabel"
-                                   FontSize="16" />
-
-                            <Label x:Name="selectedTimeLabel"
-                                   FontSize="16" />
-
-                            <Label x:Name="selectedServices"
-                                   FontSize="16" />
 
                         </StackLayout>
                     </StackLayout>
@@ -75,7 +74,7 @@
                     FontSize="22"
                     CornerRadius="10"
                     Margin="30,100,30,100"
-                    Clicked="ConfirmButton_Clicked"/>
+                    />
 
         </StackLayout>
 

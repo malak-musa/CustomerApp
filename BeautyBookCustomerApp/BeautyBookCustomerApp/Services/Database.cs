@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Nest;
 using System.Linq;
 using Xamarin.Essentials;
+using System.Collections.ObjectModel;
 
 namespace BeautyBookCustomerApp.Services
 {
@@ -41,8 +42,7 @@ namespace BeautyBookCustomerApp.Services
 
             return false;
         }
-<<<<<<< Updated upstream
-=======
+
         public ObservableCollection<BookingModelPage3> BookingPage()
         {
             var Users_Customer = firebaseClient.Child("Salon").AsObservable<BookingModelPage3>().AsObservableCollection();
@@ -53,7 +53,6 @@ namespace BeautyBookCustomerApp.Services
         public ObservableCollection<SalonInformationModel> getSalonProfile()
         {
             var soalnCustomer = firebaseClient.Child("SalonProfile").AsObservable<SalonInformationModel>().AsObservableCollection();
->>>>>>> Stashed changes
 
 
             return soalnCustomer;
