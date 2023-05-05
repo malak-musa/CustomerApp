@@ -16,6 +16,7 @@
     <PackageReference Include="FirebaseDatabase.net" Version="4.2.0" />
     <PackageReference Include="NEST" Version="7.17.5" />
     <PackageReference Include="PresentationFramework" Version="4.6.0" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="XamForms.Controls.Calendar" Version="1.1.1" />

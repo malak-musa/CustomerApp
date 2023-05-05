@@ -9,13 +9,111 @@
             <Label Text="My Profile"
                    FontSize="20"
                    TextColor="Black"
-                   Margin="90,0,90,0"/>
+                   Margin="85,0,85,0"/>
         </ContentView>
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
-        <StackLayout>
-            
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="profile_image.jpg"
+                       HeightRequest="95"
+                       HorizontalOptions="Center"
+                       Margin="0,40,0,0"/>
+
+                <Label Text="{Binding Object.CustomerName}" 
+                       FontSize="20" 
+                       TextColor="Black" 
+                       HorizontalOptions="Center" 
+                       Margin="20"/>
+
+                <BoxView BackgroundColor="#D7D7D7" 
+                         HeightRequest="1"
+                         Margin="30,0,30,0"/>
+
+                <Label Text="My bookings appointments"
+                       FontSize="18"
+                       TextColor="Black"
+                       Margin="40,20,0,0"/>
+
+                <CollectionView ItemsSource="{Binding RequestedList}"
+                                SelectionMode="Single">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid BackgroundColor="White">
+                                <Frame HeightRequest="170"
+                                       Margin="40,15,40,20"
+                                       CornerRadius="10"
+                                       BackgroundColor="#F2F2F2">
+
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Image Grid.RowSpan="3"
+                                               Source="salon_logo.png"
+                                               WidthRequest="0"
+                                               HeightRequest="30"
+                                               Margin="-50,0,0,0"/>
+
+                                        <Label Grid.Column="1"
+                                               Text="{Binding Object.SalonName}"
+                                               FontSize="20"
+                                               TextColor="Black"
+                                               Margin="-50,0,0,0"/>
+
+                                        <Label Grid.Column="1"
+                                               Text="Pending"
+                                               FontSize="16"
+                                               TextColor="Gray"                             
+                                               VerticalOptions="End"
+                                               Margin="-50,0,0,0"/>
+
+                                        <ImageButton Grid.Column="2"
+                                                     Source="delete_icon.png"
+                                                     BackgroundColor="#F2F2F2"
+                                                     HeightRequest="50"
+                                                     VerticalOptions="End"
+                                                     HorizontalOptions="End"
+                                                     Margin="40,0,0,10"/>
+
+                                        <Label Grid.Column="0" Grid.Row="3"
+                                               Text="{Binding Object.Date}"
+                                               TextColor="Black"
+                                               FontSize="16"
+                                               Margin="20,45,0,0"/>
+
+                                        <Label Grid.Column="0" Grid.Row="3"
+                                               Text="{Binding Object.Time}"
+                                               TextColor="Black"
+                                               FontSize="16"
+                                               Margin="20,20,0,0"/>
+
+                                        <Label Grid.Column="0" Grid.Row="4"
+                                               Text="{Binding Object.Services}"
+                                               TextColor="Black"
+                                               FontSize="16"
+                                               Margin="20,0,0,0"/>
+
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
