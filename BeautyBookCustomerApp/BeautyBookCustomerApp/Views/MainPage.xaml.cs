@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BeautyBookCustomerApp.Models;
+using BeautyBookCustomerApp.ViewModel;
+using Firebase.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +17,8 @@ namespace BeautyBookCustomerApp.Views
     {
         public MainPage()
         {
+            BindingContext = new MainPageViewModel();
+
             InitializeComponent();
         }
 
@@ -24,7 +29,24 @@ namespace BeautyBookCustomerApp.Views
     
         private async void VisitButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SalonProfilePage());
+            //await Navigation.PushAsync(new SalonProfilePage());
+        }
+
+        async void CollectionView_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
+        {
+
+            var collectionView = sender as CollectionView;
+            var selectedItem = e.CurrentSelection.FirstOrDefault();
+
+            if (selectedItem != null)
+            {
+
+                await Navigation.PushAsync(new SalonProfilePage((FirebaseObject<SalonInformationModel>)selectedItem));
+
+
+
+            }
+
         }
     }
 }
