@@ -6,7 +6,7 @@
 
     <NavigationPage.TitleView>
         <ContentView>
-            <Label Text="Bana Salon"
+            <Label Text="{Binding SalonName}"
                    FontSize="20"
                    TextColor="Black"
                    Margin="75,0,75,0"/>
@@ -43,7 +43,7 @@
                         <Image Source="phone_icon.png" 
                                HeightRequest="24" 
                                WidthRequest="24" />
-                        <Button Text="Call us" 
+                        <Button Text="Call us " 
                                 FontSize="14" 
                                 BackgroundColor="#B9B9B9" 
                                 TextColor="White" 
@@ -76,11 +76,11 @@
                            WidthRequest="30" 
                            HeightRequest="30" 
                            Margin="5,0,0,0"/>
-                    <Label Text="Tal Roundabout, New Nablus" 
+                    <Label Text="{Binding Location}" 
                            FontSize="Small" 
                            Margin="3,5,0,0" />
                 </StackLayout>
-            
+
                 <StackLayout Orientation="Horizontal" 
                              Spacing="10">
                     <Image Source="time_icon.png" 
@@ -91,18 +91,40 @@
                            FontSize="Small" 
                            Margin="10,5,0,0" />
                 </StackLayout>
-            
 
                 <StackLayout Orientation="Horizontal"
                              Spacing="10">
-                    <Image Source="calender_icon.png" 
+                    <Image Source="call_icon.png" 
                            WidthRequest="30" 
                            HeightRequest="30"
                            Margin="6,0,0,0"/>
-                    <Label Text="Days Off Monday" 
+                    <Label Text="{Binding Phone}" 
                            FontSize="Small" 
                            Margin="3,5,0,0" />
                 </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" 
+                             Spacing="10">
+                    <Image Source="gender_icon.png" 
+                           WidthRequest="20" 
+                           HeightRequest="30" 
+                           Margin="10,0,0,0"/>
+                    <Label Text="{Binding SalonType}" 
+                           FontSize="Small" 
+                           Margin="10,5,0,0" />
+                </StackLayout>
+
+                <BoxView Color="#d9d9d9" 
+                     HeightRequest="1" 
+                     WidthRequest="1000" 
+                     HorizontalOptions="CenterAndExpand" 
+                     Margin="10,30,10,30" />
+
+                <Label Text="Services" 
+                       FontSize="18" 
+                       FontAttributes="Bold" 
+                       TextColor="Black"/>
+
             </StackLayout>
 
            

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BeautyBookCustomerApp.Views;
+using BeautyBookCustomerApp.Models;
+using Firebase.Database;
+using BeautyBookCustomerApp.ViewModel;
 
 namespace BeautyBookCustomerApp.Views
 {
@@ -18,9 +21,13 @@ namespace BeautyBookCustomerApp.Views
             public string LabelText { get; set; }
         }
 
-        public SalonProfilePage()
+        FirebaseObject<SalonInformationModel> Deatails { set; get; }
+        public SalonProfilePage(FirebaseObject<SalonInformationModel> details)
         {
+            BindingContext = new SalonProfileViewModel { SalonDetails = details };
+
             InitializeComponent();
+            
 
         }
 

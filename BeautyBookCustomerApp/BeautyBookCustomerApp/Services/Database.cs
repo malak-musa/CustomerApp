@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Nest;
 using System.Linq;
 using Xamarin.Essentials;
+using BeautyBookAdminApp.Models;
 
 namespace BeautyBookCustomerApp.Services
 {
@@ -53,6 +54,14 @@ namespace BeautyBookCustomerApp.Services
             }
 
             return false;
+        }
+
+        public async Task<List<FirebaseObject<SalonInformationModel>>> GetSalons()
+        {
+            var requestedList = await firebaseClient.Child("SalonProfile").OnceAsync<SalonInformationModel>();
+
+            return requestedList.ToList();
+
         }
 
         /*public async Task<List<SalonInformationModel>> GetSalonsAsync()
