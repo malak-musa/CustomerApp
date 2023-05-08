@@ -4,15 +4,13 @@ using System.Text;
 
 namespace BeautyBookCustomerApp.Models
 {
-
-    public class CustomerModel
+    public class AuthModel
     {
-        public string Username { set; get; }
+        public string UserId { set; get; }
         public string Password { set; get; }
+        public string Email { set; get; }   
+        public string PhoneNumber {set; get; }
+        public string Username { set; get; }
         public string FullName { set; get; }
-        public string PhoneNumber { set; get; }
-        public string UserID { set; get; }
-
-
     }
 }

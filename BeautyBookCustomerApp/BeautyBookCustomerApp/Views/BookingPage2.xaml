@@ -89,7 +89,7 @@
                                     BackgroundColor="White"
                                     BorderWidth="1.5"
                                     BorderColor="LightGray"
-                                    Clicked="SelectTime"/>
+                                    />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
@@ -103,7 +103,7 @@
                     WidthRequest="200" 
                     FontSize="22"
                     CornerRadius="10"
-                    Clicked="NextButton_Clicked"/>
+                    />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

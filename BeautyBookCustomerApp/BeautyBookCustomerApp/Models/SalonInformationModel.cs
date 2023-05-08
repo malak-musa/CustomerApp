@@ -4,7 +4,8 @@ using System.Text;
 
 namespace BeautyBookCustomerApp.Models
 {
-    internal class SalonInformationModel
+    public class SalonInformationModel
     {
+
     }
 }

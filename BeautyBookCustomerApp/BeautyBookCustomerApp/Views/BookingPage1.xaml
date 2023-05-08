@@ -52,13 +52,13 @@
                                  Source="minus_icon.jpg"
                                  BackgroundColor="#EDEDED"
                                  Margin="20,0,0,0"  
-                                 Clicked="minusButtonClicked"/>
+                                 />
 
                     <ImageButton Grid.Column="4"
                                  Source="plus_icon.jpg"
                                  BackgroundColor="#EDEDED" 
                                  Margin="10,0,0,0"
-                                 Clicked="plusButtonClicked"/>
+                                 />
                 </Grid>
             </Frame>
 
@@ -215,7 +215,7 @@
                     FontSize="22"
                     CornerRadius="10"
                     Margin="30,60,30,30"
-                    Clicked="NextButton_Clicked"/>
+                   />
 
         </StackLayout>
     </ContentPage.Content>

@@ -21,27 +21,19 @@
 
             <StackLayout Spacing="10">
 
-                <Entry x:Name="FirstName"
-                       Text="{Binding FirstName}"
-                       Placeholder="First Name"
-                       FontSize="18"
-                       PlaceholderColor="#B5B5B5"
-                       TextColor ="Black" 
-                       Keyboard="Text"
-                       Margin="40,30,40,0"/>
                 
-                <Entry x:Name="LastName"
-                       Text="{Binding LastName}"
-                       Placeholder="Last Name"
+                <Entry x:Name="FullName"
+                       Text="{Binding FullName}"
+                       Placeholder="Full Name"
                        FontSize="18"
                        PlaceholderColor="#B5B5B5"
                        TextColor ="Black" 
                        Keyboard="Text"
                        Margin="40,0,40,0"/>
 
-                <Entry x:Name="Username"
-                       Text="{Binding Username}"
-                       Placeholder="Username"
+                <Entry x:Name="Email"
+                       Text="{Binding Email}"
+                       Placeholder="Email"
                        FontSize="18"
                        PlaceholderColor="#B5B5B5"
                        TextColor ="Black" 
@@ -99,7 +91,7 @@
                     CornerRadius="10"
                     Margin="40,0,40,100"
                     VerticalOptions="CenterAndExpand"
-                    Clicked="SignupButton_Clicked" />
+                    Command="{Binding SigUpButton}" />
 
         </StackLayout>
     </ContentPage.Content>
