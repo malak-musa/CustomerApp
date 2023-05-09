@@ -102,7 +102,7 @@ namespace BeautyBookCustomerApp.Services
                 await SecureStorage.SetAsync("oauth_token", token);
                 if (token != null)
                 {
-                    App.Current.MainPage = new BookingPage2();
+                    App.Current.MainPage = new MainPage();
                 }
             }
             catch (FirebaseAuthException ex)
@@ -146,11 +146,23 @@ namespace BeautyBookCustomerApp.Services
             }
 
         }
+        public async Task<bool> SaveAppointmentInformation(BookingModel bookingInfo)
+        {
+            var data = await firebaseClient.Child(nameof(BookingModel)).PostAsync(JsonConvert.SerializeObject(bookingInfo));
 
+            if (!string.IsNullOrEmpty(data.Key))
+            {
+                return true;
+
+            }
+
+            return false;
+        }
         public ObservableCollection<CustomerModel> getSalonProfile()
         {
             var salon = firebaseClient.Child("SalonProfile").AsObservable<CustomerModel>().AsObservableCollection();
             return salon;
         }
     }
+
 }
