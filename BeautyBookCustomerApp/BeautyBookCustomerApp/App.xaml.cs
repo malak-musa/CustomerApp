@@ -11,7 +11,7 @@ namespace BeautyBookCustomerApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new BookingPage1());
+            MainPage = new NavigationPage(new UserProfilePage());
         }
 
         protected override void OnStart()

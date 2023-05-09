@@ -9,6 +9,9 @@ using Nest;
 using System.Linq;
 using Xamarin.Essentials;
 using BeautyBookAdminApp.Models;
+using Firebase.Database.Query;
+using System.Collections.ObjectModel;
+using System.Reactive.Linq;
 
 namespace BeautyBookCustomerApp.Services
 {
@@ -63,7 +66,38 @@ namespace BeautyBookCustomerApp.Services
             return requestedList.ToList();
 
         }
+        public async Task<bool> DeleteBooking(FirebaseObject<BookingModel> booking)
+        {
+            try
+            {
+                // Get a reference to the booking to be deleted
+                var bookingRef = firebaseClient.Child("BookingModel").Child(booking.Key);
 
+                // Delete the booking
+                await bookingRef.DeleteAsync();
+
+                // Remove the booking from the local collection
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting booking: {ex.Message}");
+                return false;
+            }
+        }
+        public async Task<List<FirebaseObject<BookingModel>>> GetBooking()
+        {
+            try
+            {
+               var booking=await firebaseClient.Child("BookingModel").OnceAsync<BookingModel>();
+                return booking.ToList();
+
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
         /*public async Task<List<SalonInformationModel>> GetSalonsAsync()
         {
             var salons = await firebaseClient.Child(nameof(SalonInformationModel)).OnceAsync<SalonInformationModel>();

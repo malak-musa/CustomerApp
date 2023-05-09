@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="BeautyBookCustomerApp.Views.UserProfilePage"
              BackgroundColor="White">
     
@@ -12,7 +13,12 @@
                    Margin="85,0,85,0"/>
         </ContentView>
     </NavigationPage.TitleView>
-    
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior
+        EventName="Appearing"
+        Command="{Binding OnApperingCommand}" />
+    </ContentPage.Behaviors>
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -37,6 +43,7 @@
                        Margin="40,20,0,0"/>
 
                 <CollectionView ItemsSource="{Binding RequestedList}"
+                                x:Name="collection"
                                 SelectionMode="Single">
 
                     <CollectionView.ItemTemplate>
@@ -87,8 +94,11 @@
                                                      HeightRequest="50"
                                                      VerticalOptions="End"
                                                      HorizontalOptions="End"
-                                                     Margin="40,0,0,10"/>
+                                                     Margin="40,0,0,10"
+                                                        Command="{Binding BindingContext.DeleteBookingCommand, Source={x:Reference Name=collection}}"
+                                                        CommandParameter="{Binding .}"/>
 
+                                        
                                         <Label Grid.Column="0" Grid.Row="3"
                                                Text="{Binding Object.Date}"
                                                TextColor="Black"
