@@ -7,12 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyBookCustomerApp.Andro
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyBookCustomerApp.iOS", "BeautyBookCustomerApp\BeautyBookCustomerApp.iOS\BeautyBookCustomerApp.iOS.csproj", "{23E2284D-43C0-4ECA-8198-5941672F5055}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeautyBookCustomerApp", "BeautyBookCustomerApp\BeautyBookCustomerApp\BeautyBookCustomerApp.csproj", "{BF0184E6-DA4E-494F-BAE4-5F57B4811A99}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6BF65395-BB72-4DBC-951D-97E0D73DFFA7}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeautyBookCustomerApp", "BeautyBookCustomerApp\BeautyBookCustomerApp\BeautyBookCustomerApp.csproj", "{BF0184E6-DA4E-494F-BAE4-5F57B4811A99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
