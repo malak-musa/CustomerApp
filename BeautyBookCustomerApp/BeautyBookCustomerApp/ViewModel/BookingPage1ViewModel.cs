@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BeautyBookCustomerApp.ViewModel
 {
-    internal class BookingPage1ViewModel
+    public class BookingPage1ViewModel
     {
     }
 }

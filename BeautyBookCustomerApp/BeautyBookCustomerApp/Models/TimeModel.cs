@@ -7,6 +7,6 @@ namespace BeautyBookCustomerApp.Models
     public class TimeModel
     {
         public string Time { get; set; }
-        public bool Available { get; set; }
+        public bool Available { get; set; } 
     }
 }

@@ -29,8 +29,8 @@ namespace BeautyBookCustomerApp.ViewModel
         public string OpeningHours => _salonDetails.Object.OpeingHoures;
 
 
-        public SalonProfileViewModel() 
-        { 
+        public SalonProfileViewModel()
+        {
         }
     }
 }

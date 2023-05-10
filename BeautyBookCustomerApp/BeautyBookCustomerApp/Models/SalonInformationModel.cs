@@ -7,7 +7,7 @@ namespace BeautyBookCustomerApp.Models
     public class SalonInformationModel
     {
         public string ImagURL { get; set; }
-        public string Address { get; set; }
+        public string Address { get; set; } 
         public string SalonName { get; set; }
         public string DaysOff { get; set; }
         public string OpeingHoures { get; set; }
