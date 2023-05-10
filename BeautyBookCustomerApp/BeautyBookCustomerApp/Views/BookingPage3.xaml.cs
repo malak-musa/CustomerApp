@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BeautyBookAdminApp.Models;
+using Xamarin.Essentials;
+using Nest;
 
 namespace BeautyBookCustomerApp.Views
 {
@@ -44,13 +46,17 @@ namespace BeautyBookCustomerApp.Views
 
         private async void ConfirmButton_Clicked(object sender, EventArgs e)
         {
-            BookingModel bookingModel = new BookingModel();
+            BookingModel bookingModel = new BookingModel()
+            {
+                Date = selectedDateLabel.Text,
+                Time = selectedTimeLabel.Text,
+                Services = service,
+                SalonName = SalonNameLabel.Text,
+                //bookingModel.CustomerPhone =  ;
+                UserId = await SecureStorage.GetAsync("oauth_token")
+            };
 
-            bookingModel.Date = selectedDateLabel.Text;
-            bookingModel.Time = selectedTimeLabel.Text;
-            bookingModel.Services = service;
-            bookingModel.SalonName = SalonNameLabel.Text;
-            //bookingModel.CustomerPhone =  ;
+            
 
             try
             {

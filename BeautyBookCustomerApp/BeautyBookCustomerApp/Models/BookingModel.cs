@@ -13,5 +13,6 @@ namespace BeautyBookAdminApp.Models
         public string Services { get; set; }
         public string Status { get; set; }
         public string Time { get; set; }
+        public string UserId { get; set; }
     }
 }

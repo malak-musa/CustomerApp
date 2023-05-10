@@ -181,11 +181,11 @@ namespace BeautyBookCustomerApp.Services
             return false;
         }
 
-        public async Task<List<FirebaseObject<BookingModel>>> GetBooking()
+        public async Task<List<FirebaseObject<BookingModel>>> GetBooking(string userId)
         {
             var requestedList = await firebaseClient.Child("BookingModel").OnceAsync<BookingModel>();
 
-            return requestedList.ToList();
+            return requestedList.Where(el => el.Object.UserId == userId).ToList();
         }
 
         public async Task<bool> EditBookingStatus(string objectId, string newStatus)

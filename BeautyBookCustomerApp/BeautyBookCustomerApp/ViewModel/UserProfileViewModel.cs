@@ -9,6 +9,8 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.CommunityToolkit;
 using Xamarin.CommunityToolkit.ObjectModel;
+using Xamarin.Essentials;
+using Nest;
 
 namespace BeautyBookCustomerApp.ViewModels
 {
@@ -43,7 +45,8 @@ namespace BeautyBookCustomerApp.ViewModels
         }
         async void OnAppearing()
         {
-            var BookingList = await database.GetBooking();
+            string userID = await SecureStorage.GetAsync("oauth_token");
+            var BookingList = await database.GetBooking(userID);
             if (BookingList != null)
             {
                 RequestedList.AddRange(BookingList);
