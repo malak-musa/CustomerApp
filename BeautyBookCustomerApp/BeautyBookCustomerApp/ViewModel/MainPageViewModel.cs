@@ -32,8 +32,7 @@ namespace BeautyBookCustomerApp.ViewModel
             var t = Task.Run(async () =>
             {
                 RequestedList = await database.GetSalons();
-                
-    });
+            });
             t.Wait();
         }
     }
