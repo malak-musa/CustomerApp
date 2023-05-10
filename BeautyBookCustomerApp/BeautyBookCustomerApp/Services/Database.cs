@@ -207,6 +207,22 @@ namespace BeautyBookCustomerApp.Services
             var salon = firebaseClient.Child("SalonProfile").AsObservable<CustomerModel>().AsObservableCollection();
             return salon;
         }
+
+        public async Task<List<FirebaseObject<SalonInformationModel>>> GetSalonServices(string salonId)
+        {
+            if (string.IsNullOrEmpty(salonId))
+            {
+                throw new ArgumentException("Salon ID cannot be null or empty.", nameof(salonId));
+            }
+            var salonServices = await firebaseClient
+                .Child("SalonProfile")
+                .Child(salonId)
+                .Child("Services")
+                .OnceAsync<SalonInformationModel>();
+
+            return salonServices.ToList();
+        }
     }
+
 
 }

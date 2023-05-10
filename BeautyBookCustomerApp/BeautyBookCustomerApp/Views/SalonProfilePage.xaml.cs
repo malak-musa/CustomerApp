@@ -25,7 +25,7 @@ namespace BeautyBookCustomerApp.Views
         public SalonProfilePage(FirebaseObject<SalonInformationModel> details)
         {
             BindingContext = new SalonProfileViewModel { SalonDetails = details };
-
+            Deatails = details;
             InitializeComponent();
             
 
@@ -33,7 +33,7 @@ namespace BeautyBookCustomerApp.Views
 
         private async void AppointmentButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BookingPage1());
+            await Navigation.PushAsync(new BookingPage1(Deatails));
         }
 
 

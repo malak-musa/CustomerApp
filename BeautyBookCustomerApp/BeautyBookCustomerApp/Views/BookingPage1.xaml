@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="BeautyBookCustomerApp.Views.BookingPage1"
              BackgroundColor="White">
 
@@ -13,6 +14,12 @@
         </ContentView>
     </NavigationPage.TitleView>
 
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior
+        EventName="Appearing"
+        Command="{Binding OnApperingCommand}" />
+    </ContentPage.Behaviors>
+    
     <ContentPage.Content>
 
         <StackLayout>
@@ -25,154 +32,7 @@
 
             <Frame BackgroundColor="#EDEDED" 
                    Margin="30,20,30,0"
-                   HeightRequest="25"
-                   CornerRadius="10">
-
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label Text="Hair Cut"
-                           x:Name="serviceName"
-                           FontSize="18"
-                           TextColor="Black" />
-
-                    <Label x:Name="serviceNumLabel"
-                           Grid.Column="2"
-                           FontSize="18"
-                           TextColor="Gray" 
-                           Padding="120,-3,0,0" />
-
-                    <ImageButton Grid.Column="3"
-                                 Source="minus_icon.jpg"
-                                 BackgroundColor="#EDEDED"
-                                 Margin="20,0,0,0"  
-                                 Clicked="minusButtonClicked"/>
-
-                    <ImageButton Grid.Column="4"
-                                 Source="plus_icon.jpg"
-                                 BackgroundColor="#EDEDED" 
-                                 Margin="10,0,0,0"
-                                 Clicked="plusButtonClicked"/>
-                </Grid>
-            </Frame>
-
-            <Frame BackgroundColor="#EDEDED" 
-                   Margin="30,15,30,0"
-                   HeightRequest="25"
-                   CornerRadius="10">
-
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label Text="Hair Style"
-                           FontSize="18"
-                           TextColor="Black" />
-
-                    <Label Text="0"
-                           Grid.Column="2"
-                           FontSize="18"
-                           TextColor="Gray" 
-                           Padding="105,-3,0,0" />
-
-                    <ImageButton Grid.Column="3"
-                                 Source="minus_icon.jpg"
-                                 BackgroundColor="#EDEDED"
-                                 Margin="20,0,0,0" />
-
-                    <ImageButton Grid.Column="4"
-                                 Source="plus_icon.jpg"
-                                 BackgroundColor="#EDEDED" 
-                                 Margin="10,0,0,0" />
-                </Grid>
-            </Frame>
-
-            <Frame BackgroundColor="#EDEDED" 
-                   Margin="30,15,30,0"
-                   HeightRequest="25"
-                   CornerRadius="10">
-
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label Text="Hair Color"
-                           FontSize="18"
-                           TextColor="Black" />
-
-                    <Label Text="0"
-                           Grid.Column="2"
-                           FontSize="18"
-                           TextColor="Gray" 
-                           Padding="105,-3,0,0" />
-
-                    <ImageButton Grid.Column="3"
-                                 Source="minus_icon.jpg"
-                                 BackgroundColor="#EDEDED"
-                                 Margin="20,0,0,0" />
-
-                    <ImageButton Grid.Column="4"
-                                 Source="plus_icon.jpg"
-                                 BackgroundColor="#EDEDED" 
-                                 Margin="10,0,0,0" />
-                </Grid>
-            </Frame>
-
-            <Frame BackgroundColor="#EDEDED" 
-                   Margin="30,15,30,0"
-                   HeightRequest="25"
-                   CornerRadius="10">
-
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-
-                    <Label Text="Makeup"
-                           FontSize="18"
-                           TextColor="Black" />
-
-                    <Label Text="0"
-                           Grid.Column="2"
-                           FontSize="18"
-                           TextColor="Gray" 
-                           Padding="120,-3,0,0" />
-
-                    <ImageButton Grid.Column="3"
-                                 Source="minus_icon.jpg"
-                                 BackgroundColor="#EDEDED"
-                                 Margin="20,0,0,0" />
-
-                    <ImageButton Grid.Column="4"
-                                 Source="plus_icon.jpg"
-                                 BackgroundColor="#EDEDED" 
-                                 Margin="10,0,0,0" />
-                </Grid>
-            </Frame>
-
-            <Frame BackgroundColor="#EDEDED" 
-                   Margin="30,15,30,0"
-                   HeightRequest="25"
+                   HeightRequest="60"
                    CornerRadius="10">
 
                 <Grid>
@@ -185,26 +45,76 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Text="Nails"
-                           FontSize="18"
+                           x:Name="serviceName"
+                           FontSize="20"
                            TextColor="Black" />
 
-                    <Label Text="0"
+                    <Label x:Name="serviceNumLabel"
                            Grid.Column="2"
                            FontSize="18"
                            TextColor="Gray" 
-                           Padding="145,-3,0,0" />
+                           Padding="120,0,0,10" />
 
                     <ImageButton Grid.Column="3"
                                  Source="minus_icon.jpg"
                                  BackgroundColor="#EDEDED"
-                                 Margin="20,0,0,0" />
+                                 Margin="20,0,0,0"  
+                                 Clicked="minusButtonClicked"/>
 
                     <ImageButton Grid.Column="4"
                                  Source="plus_icon.jpg"
                                  BackgroundColor="#EDEDED" 
-                                 Margin="10,0,0,0" />
+                                 Margin="5,0,0,0"
+                                 Clicked="plusButtonClicked"/>
                 </Grid>
             </Frame>
+
+            <CollectionView ItemsSource="{Binding RequestedList}"
+                            SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#EDEDED" 
+                   Margin="30,20,30,0"
+                   HeightRequest="25"
+                   CornerRadius="10">
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding RequestedList[0]}"
+                           x:Name="serviceName"
+                           FontSize="18"
+                           TextColor="Black" />
+
+                                <Label x:Name="serviceNumLabel"
+                           Grid.Column="2"
+                           FontSize="18"
+                           TextColor="Gray" 
+                           Padding="120,-3,0,0" />
+
+                                <ImageButton Grid.Column="3"
+                                 Source="minus_icon.jpg"
+                                 BackgroundColor="#EDEDED"
+                                 Margin="20,0,0,0"  
+                                 Clicked="minusButtonClicked"/>
+
+                                <ImageButton Grid.Column="4"
+                                 Source="plus_icon.jpg"
+                                 BackgroundColor="#EDEDED" 
+                                 Margin="10,0,0,0"
+                                 Clicked="plusButtonClicked"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
 
             <Button x:Name="nextButton"
                     Text="Next"
