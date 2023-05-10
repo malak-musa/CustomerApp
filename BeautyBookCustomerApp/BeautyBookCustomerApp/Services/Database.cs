@@ -33,6 +33,18 @@ namespace BeautyBookCustomerApp.Services
             }
             return false;
         }
+
+        public async Task<bool> SaveCustomerInfo(CustomerModel salon)
+        {
+            var data = await firebaseClient.Child(nameof(CustomerModel)).PostAsync(JsonConvert.SerializeObject(salon));
+            if (!string.IsNullOrEmpty(data.Key))
+            {
+                return true;
+
+            }
+            return false;
+        }
+        
         public async Task SingUp(AuthModel authModel, string email, string password)
         {
             try
@@ -81,6 +93,7 @@ namespace BeautyBookCustomerApp.Services
                 await App.Current.MainPage.DisplayAlert("Authentication Error", ex.Message.ToString(), "OK");
             }
         }
+        
         public async Task SingIn(string email, string password)
         {
             try
@@ -126,6 +139,47 @@ namespace BeautyBookCustomerApp.Services
             }
         }
 
+        public async Task<List<FirebaseObject<SalonInformationModel>>> GetSalons()
+        {
+            var requestedList = await firebaseClient.Child("SalonProfile").OnceAsync<SalonInformationModel>();
+
+            return requestedList.ToList();
+
+        }
+
+        public async Task<bool> DeleteBooking(FirebaseObject<BookingModel> booking)
+        {
+            try
+            {
+                // Get a reference to the booking to be deleted
+                var bookingRef = firebaseClient.Child("BookingModel").Child(booking.Key);
+
+                // Delete the booking
+                await bookingRef.DeleteAsync();
+
+                // Remove the booking from the local collection
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error deleting booking: {ex.Message}");
+                return false;
+            }
+        }
+
+        public async Task<bool> SaveAppointmentInformation(BookingModel bookingInfo)
+        {
+            var data = await firebaseClient.Child(nameof(BookingModel)).PostAsync(JsonConvert.SerializeObject(bookingInfo));
+
+            if (!string.IsNullOrEmpty(data.Key))
+            {
+                return true;
+
+            }
+
+            return false;
+        }
+
         public async Task<List<FirebaseObject<BookingModel>>> GetBooking()
         {
             var requestedList = await firebaseClient.Child("BookingModel").OnceAsync<BookingModel>();
@@ -146,18 +200,7 @@ namespace BeautyBookCustomerApp.Services
             }
 
         }
-        public async Task<bool> SaveAppointmentInformation(BookingModel bookingInfo)
-        {
-            var data = await firebaseClient.Child(nameof(BookingModel)).PostAsync(JsonConvert.SerializeObject(bookingInfo));
-
-            if (!string.IsNullOrEmpty(data.Key))
-            {
-                return true;
-
-            }
-
-            return false;
-        }
+        
         public ObservableCollection<CustomerModel> getSalonProfile()
         {
             var salon = firebaseClient.Child("SalonProfile").AsObservable<CustomerModel>().AsObservableCollection();

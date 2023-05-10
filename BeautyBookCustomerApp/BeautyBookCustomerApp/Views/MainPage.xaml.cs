@@ -29,7 +29,7 @@ namespace BeautyBookCustomerApp.Views
 
         private async void VisitButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SalonProfilePage());
+            //await Navigation.PushAsync(new SalonProfilePage());
         }
 
         async void CollectionView_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
@@ -40,13 +40,8 @@ namespace BeautyBookCustomerApp.Views
 
             if (selectedItem != null)
             {
-
                 await Navigation.PushAsync(new SalonProfilePage((FirebaseObject<SalonInformationModel>)selectedItem));
-
-
-
             }
-
         }
     }
 }

@@ -66,7 +66,7 @@ namespace BeautyBookCustomerApp.Views
         }
 
         private void minusButtonClicked(object sender, EventArgs e)
-        {     
+        {
             if (serviceNumber >= 1)
             {
                 serviceNumber--;
