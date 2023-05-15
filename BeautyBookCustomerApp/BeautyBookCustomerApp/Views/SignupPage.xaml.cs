@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using BeautyBookCustomerApp.Models;
+using BeautyBookCustomerApp.ViewModel;
 
 namespace BeautyBookCustomerApp.Views
 {
@@ -20,6 +21,7 @@ namespace BeautyBookCustomerApp.Views
     {
         public SignupPage()
         {
+            BindingContext = new SignupViewModel();
             InitializeComponent();
         }
 
@@ -28,13 +30,6 @@ namespace BeautyBookCustomerApp.Views
             base.OnAppearing();
             var navigationPage = Application.Current.MainPage as NavigationPage;
             navigationPage.BarBackgroundColor = Color.White;
-        }
-
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-            var navigationPage = Application.Current.MainPage as NavigationPage;
-            // navigationPage.BarBackgroundColor = Color.White;
         }
 
         private async void SignupButton_Clicked(object sender, EventArgs e)

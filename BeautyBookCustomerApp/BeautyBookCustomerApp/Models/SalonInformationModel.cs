@@ -14,6 +14,7 @@ namespace BeautyBookCustomerApp.Models
         public string SalonType { get; set; }
         public string PhoneNumber { get; set; }
 
+        public List<string> Services { get; set; }  
         public string userId { get; set; }
     }
 

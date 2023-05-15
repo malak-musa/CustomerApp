@@ -79,6 +79,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50" />
                             </Grid.RowDefinitions>
+                            
                             <Button Grid.Column="0" 
                                     Text="{Binding Time}" 
                                     HorizontalOptions="Center"

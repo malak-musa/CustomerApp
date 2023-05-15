@@ -17,8 +17,10 @@ namespace BeautyBookCustomerApp.Views
     {
         public MainPage()
         {
-            BindingContext = new MainPageViewModel();
 
+            //BindingContext = new MainPageViewModel();
+            var viewModel = new MainPageViewModel(Navigation);
+            BindingContext = viewModel;
             InitializeComponent();
         }
 
@@ -26,27 +28,14 @@ namespace BeautyBookCustomerApp.Views
         {
             await Navigation.PushAsync(new UserProfilePage());
         }
-    
-        private async void VisitButton_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.PushAsync(new SalonProfilePage());
-        }
-
-        async void CollectionView_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
-        {
-
-            var collectionView = sender as CollectionView;
-            var selectedItem = e.CurrentSelection.FirstOrDefault();
-
-            if (selectedItem != null)
-            {
-
-                await Navigation.PushAsync(new SalonProfilePage((FirebaseObject<SalonInformationModel>)selectedItem));
 
 
 
-            }
+        private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    var viewModel = BindingContext as MainPageViewModel;
+    viewModel?.CollectionView_SelectionChanged(sender, e);
+}
 
-        }
     }
 }

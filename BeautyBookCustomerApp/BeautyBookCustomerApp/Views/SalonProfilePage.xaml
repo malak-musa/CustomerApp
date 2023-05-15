@@ -16,7 +16,7 @@
     <ContentPage.Content>
         <StackLayout Padding="10">
 
-            <Image Source="profile_cover.jpg" 
+            <Image Source="cover.jpg" 
                    Aspect="AspectFill" 
                    HeightRequest="190" 
                    Margin="-10,-10,-10,-70"/>
