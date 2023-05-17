@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BeautyBookCustomerApp.Views.MainPage"
+             NavigationPage.HasBackButton="False"
+             BackgroundColor="White">
+
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <ImageButton Grid.Column="0" 
+                         Source="profile_image.png" 
+                         BackgroundColor="#cccccc"
+                         WidthRequest="45"
+                         HeightRequest="45"
+                         CornerRadius="50"
+                         HorizontalOptions="StartAndExpand"
+                         Command="{Binding ProfileCommand}"/>
+
+           
+            
+
+        </Grid>
+    </NavigationPage.TitleView>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="10,40,10,0">
+            
+            <CollectionView ItemsSource="{Binding RequestedList}"
+                            SelectionChanged="CollectionView_SelectionChanged"
+                            SelectionMode="Single">
+                
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid BackgroundColor="White">
+
+                            <Frame BorderColor="Transparent" 
+                                   HeightRequest="60"
+                                   Margin="10,10,10,10"
+                                   CornerRadius="15"
+                                   BackgroundColor="#D5E8E4">
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <ImageButton Grid.Column="0" 
+                                                 Source="salon_avatar.png" 
+                                                 BackgroundColor="#cccccc"
+                                                 WidthRequest="65"
+                                                 HeightRequest="65"
+                                                 CornerRadius="50"
+                                                 HorizontalOptions="StartAndExpand"/>
+
+                                    <Label Grid.Column="1"
+                                           Text="{Binding Object.SalonName}"
+                                           FontSize="20"
+                                           TextColor="Black"
+                                           Margin="20,0,0,0"/>
+
+                                    <StackLayout Orientation="Horizontal" Spacing="10" Grid.Column="1">
+                                        <Image Source="location_icon.png" WidthRequest="25" HeightRequest="30" Margin="20,30,0,0"/>
+                                        <Label Text="{Binding Object.Address}" FontSize="Small" TextColor="Black" Margin="0,40,0,0" />
+                                    </StackLayout>
+
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
