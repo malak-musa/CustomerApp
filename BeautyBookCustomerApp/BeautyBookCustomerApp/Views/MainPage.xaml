@@ -18,15 +18,9 @@
                          HeightRequest="45"
                          CornerRadius="50"
                          HorizontalOptions="StartAndExpand"
-                         Clicked="OnProfileTapped"/>
+                         Command="{Binding ProfileCommand}"/>
 
-            <ImageButton Grid.Column="1" 
-                         Source="search_icon.png" 
-                         BackgroundColor="Transparent"
-                         WidthRequest="30"
-                         HeightRequest="25"
-                         Margin="0,5,25,0"
-                         HorizontalOptions="EndAndExpand"/>
+           
             
 
         </Grid>

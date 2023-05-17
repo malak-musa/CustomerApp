@@ -65,10 +65,10 @@ namespace BeautyBookCustomerApp.Services
                 var userCredential = await client.CreateUserWithEmailAndPasswordAsync(email, password);
                 authModel.UserId = userCredential.User.Uid;
 
-                await firebaseClient.Child("SalonProfile").PostAsync(authModel);
+                await firebaseClient.Child("CustomerModel").PostAsync(authModel);
                 if (userCredential.User.Uid != null)
                 {
-                    App.Current.MainPage = new LoginPage();
+                    App.Current.MainPage = new MainPage();
                 }
             }
             catch (FirebaseAuthException ex)

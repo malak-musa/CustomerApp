@@ -1,4 +1,6 @@
 ﻿using BeautyBookCustomerApp.Models;
+using BeautyBookCustomerApp.ViewModel;
+using Firebase.Database;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -19,9 +21,12 @@ namespace BeautyBookCustomerApp.Views
         List<string> serviceListParameter;
         ObservableCollection<TimeModel> timeModel;
 
-        public BookingPage2(List<string> ServiceList)
+        FirebaseObject<SalonInformationModel> Details { get; set; }
+        public BookingPage2(List<string> ServiceList, FirebaseObject<SalonInformationModel> details)
         {
             InitializeComponent();
+
+            Details = details;
 
             Calendar.MinDate = DateTime.Today;
 
@@ -78,7 +83,7 @@ namespace BeautyBookCustomerApp.Views
 
         private async void NextButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BookingPage3(serviceListParameter, selectedDate, selectedTimeText));
+            await Navigation.PushAsync(new BookingPage3(serviceListParameter, selectedDate, selectedTimeText, Details));
         }
     }
 }

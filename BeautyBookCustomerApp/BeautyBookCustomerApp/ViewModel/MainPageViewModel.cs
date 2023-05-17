@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Forms;
 
@@ -33,8 +34,12 @@ namespace BeautyBookCustomerApp.ViewModel
 
         private INavigation _navigation;
 
+        public ICommand ProfileCommand { get; private set; }
+
         public MainPageViewModel(INavigation navigation)
         {
+            ProfileCommand = new Command(OnProfileTapped);
+
             _navigation = navigation;
             database = new Database();
             var t = Task.Run(async () =>
@@ -44,20 +49,19 @@ namespace BeautyBookCustomerApp.ViewModel
             t.Wait();
         }
 
+        private async void OnProfileTapped()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new UserProfilePage(SelectedItem));
+        }
+
         public async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var collectionView = sender as CollectionView;
             var selectedItem = e.CurrentSelection.FirstOrDefault();
 
             if (selectedItem != null)
             {
                 await _navigation.PushAsync(new SalonProfilePage((FirebaseObject<SalonInformationModel>)selectedItem));
             }
-        }
-
-        private async void OnProfileTapped(object sender, EventArgs e)
-        {
-            await _navigation.PushAsync(new UserProfilePage());
         }
     }
 }

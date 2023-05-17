@@ -1,4 +1,5 @@
 ﻿using BeautyBookCustomerApp.Services;
+using BeautyBookCustomerApp.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace BeautyBookCustomerApp.Views
 
         public LoginPage()
         {
+            BindingContext = new LoginViewModel();
             InitializeComponent();
         }
 

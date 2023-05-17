@@ -15,31 +15,16 @@ namespace BeautyBookCustomerApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BookingPage1 : ContentPage
     {
+        FirebaseObject<SalonInformationModel> Details;
 
         public BookingPage1(FirebaseObject<SalonInformationModel> details)
         {
             BindingContext = new BookingPage1ViewModel { SalonDetails = details };
+            Details = details;
             InitializeComponent();
 
         }
-        private bool isLabelClicked = false;
-        private void OnLabelTapped(object sender, EventArgs e)
-        {
-            var label = (Label)sender;
-
-            if (!isLabelClicked)
-            {
-                label.Text = "+";
-                isLabelClicked = true;
-            }
-            else
-            {
-                label.Text = "-";
-                isLabelClicked = false;
-            }
-        }
         private bool isButtonClicked = false;
-
 
         private void OnButtonClicked(object sender, EventArgs e)
         {
@@ -86,7 +71,7 @@ namespace BeautyBookCustomerApp.Views
 
         private async void NextButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new BookingPage2(serviceList));
+            await Navigation.PushAsync(new BookingPage2(serviceList, Details));
         }
     }
 }

@@ -24,18 +24,15 @@ namespace BeautyBookCustomerApp.Views
             InitializeComponent();
         }
 
-        private async void OnProfileTapped(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new UserProfilePage());
-        }
+
 
 
 
         private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-{
-    var viewModel = BindingContext as MainPageViewModel;
-    viewModel?.CollectionView_SelectionChanged(sender, e);
-}
+        {
+            var viewModel = BindingContext as MainPageViewModel;
+            viewModel?.CollectionView_SelectionChanged(sender, e);
+        }
 
     }
 }

@@ -13,6 +13,8 @@ using Xamarin.Forms.Xaml;
 using BeautyBookAdminApp.Models;
 using Xamarin.Essentials;
 using Nest;
+using Firebase.Database;
+using BeautyBookCustomerApp.ViewModel;
 
 namespace BeautyBookCustomerApp.Views
 {
@@ -25,9 +27,10 @@ namespace BeautyBookCustomerApp.Views
         Database _userDB = new Database();
         private const string FirebaseApiKey = "AIzaSyA37bTpBm27kjiHDuf5tigFwCmVsxmEYsY ";
 
-        public BookingPage3(List<string> ServiceList, DateTime date, string time)
+        public BookingPage3(List<string> ServiceList, DateTime date, string time, FirebaseObject<SalonInformationModel> details)
         {
             InitializeComponent();
+            BindingContext = new BookingPage3ViewModel { SalonDetails = details };
 
             string concatenatedString = "";
 
@@ -56,7 +59,7 @@ namespace BeautyBookCustomerApp.Views
                 UserId = await SecureStorage.GetAsync("oauth_token")
             };
 
-            
+
 
             try
             {
