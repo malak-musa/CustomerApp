@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,12 +25,12 @@ namespace BeautyBookCustomerApp.Views
             InitializeComponent();
         }
 
-        private void LogOut_clicked(object sender, EventArgs e)
+        private async void Logout_clicked(object sender, EventArgs e)
         {
             // Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
-            Application.Current.MainPage.Navigation.PopToRootAsync();
-
-
+            await Application.Current.MainPage.Navigation.PopToRootAsync();
+            Application.Current.MainPage = new NavigationPage(new LoginPage());
+            SecureStorage.RemoveAll();
         }
     }
 }

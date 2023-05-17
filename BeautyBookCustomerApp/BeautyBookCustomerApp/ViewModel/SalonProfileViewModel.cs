@@ -18,16 +18,10 @@ namespace BeautyBookCustomerApp.ViewModel
         }
 
         public string SalonName => _salonDetails.Object.SalonName;
-
         public string Phone => _salonDetails.Object.PhoneNumber;
-
         public string Location => _salonDetails.Object.Address;
-
         public string SalonType => _salonDetails.Object.SalonType;
-
-
         public string OpeningHours => _salonDetails.Object.OpeingHoures;
-
 
         public SalonProfileViewModel()
         {

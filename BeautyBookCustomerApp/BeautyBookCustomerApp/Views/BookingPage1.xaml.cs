@@ -71,6 +71,12 @@ namespace BeautyBookCustomerApp.Views
 
         private async void NextButton_Clicked(object sender, EventArgs e)
         {
+            if(serviceList.Count == 0)
+            {
+                
+                await Application.Current.MainPage.DisplayAlert("sorry", "please select service", "ok");
+                return;
+            }
             await Navigation.PushAsync(new BookingPage2(serviceList, Details));
         }
     }

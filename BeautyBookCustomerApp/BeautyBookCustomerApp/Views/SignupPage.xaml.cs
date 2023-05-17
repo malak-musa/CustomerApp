@@ -31,10 +31,5 @@ namespace BeautyBookCustomerApp.Views
             var navigationPage = Application.Current.MainPage as NavigationPage;
             navigationPage.BarBackgroundColor = Color.White;
         }
-
-        private async void SignupButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MainPage());
-        }
     }
 }

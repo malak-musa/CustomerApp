@@ -75,6 +75,7 @@ namespace BeautyBookCustomerApp.Views
                 if (isSave)
                 {
                     await DisplayAlert("Booking", "Booking compleated", "ok");
+                    await Application.Current.MainPage.Navigation.PopToRootAsync();
                 }
                 else
                 {

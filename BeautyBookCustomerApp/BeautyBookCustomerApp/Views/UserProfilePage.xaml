@@ -32,15 +32,15 @@
                            TextColor="Black"
                            FontAttributes="Bold"
                            FontSize="16"
-                           Margin="290,25,0,0"
-                           />
-                    <ImageButton Source="LogOut_icon.png" 
+                           Margin="290,25,0,0"/>
+                    
+                    <ImageButton Source="logout_icon.png" 
                                  BackgroundColor="Transparent"
                                  WidthRequest="30"
                                  HeightRequest="25"
-                                 Margin="0,-29,15,0"
+                                 Margin="0,0,15,0"
                                  HorizontalOptions="EndAndExpand"
-                                 Clicked="LogOut_clicked"/>
+                                 Clicked="Logout_clicked"/>
                 </StackLayout>
 
                 <Image Source="profile_image.jpg"
@@ -48,7 +48,12 @@
                        HorizontalOptions="Center"
                        Margin="0,20,0,0"/>
 
-                <Label Text="{Binding Object.SalonName}" 
+                <Label Text="{Binding UserInfo.FullName}" 
+                       FontSize="20" 
+                       TextColor="Black" 
+                       HorizontalOptions="Center" 
+                       Margin="20"/>
+                <Label Text="{Binding UserInfo.PhoneNumber}" 
                        FontSize="20" 
                        TextColor="Black" 
                        HorizontalOptions="Center" 
@@ -118,8 +123,8 @@
                                                      VerticalOptions="End"
                                                      HorizontalOptions="End"
                                                      Margin="30,0,0,10"
-                                                        Command="{Binding BindingContext.DeleteBookingCommand, Source={x:Reference Name=collection}}"
-                                                        CommandParameter="{Binding .}"/>
+                                                     Command="{Binding BindingContext.DeleteBookingCommand, Source={x:Reference Name=collection}}"
+                                                     CommandParameter="{Binding .}"/>
 
 
                                         <Label Grid.Column="0" Grid.Row="3"

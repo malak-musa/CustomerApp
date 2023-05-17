@@ -29,7 +29,7 @@
                        PlaceholderColor="#B5B5B5"
                        TextColor ="Black" 
                        Keyboard="Text"
-                       Margin="40,0,40,0"/>
+                       Margin="40,30,40,0"/>
 
                 <Entry x:Name="Email"
                        Text="{Binding Email}"
@@ -91,7 +91,7 @@
                     CornerRadius="10"
                     Margin="40,0,40,100"
                     VerticalOptions="CenterAndExpand"
-                    Clicked="SignupButton_Clicked" />
+                    Command="{Binding SigUpButton}" />
 
         </StackLayout>
     </ContentPage.Content>

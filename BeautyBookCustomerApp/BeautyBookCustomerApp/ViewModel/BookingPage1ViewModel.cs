@@ -38,8 +38,9 @@ namespace BeautyBookCustomerApp.ViewModel
 
         public async void OnAppearing()
         {
-            string userID = await SecureStorage.GetAsync("oauth_token");
-            var BookingList = await database.GetSalonServices(userID);
+
+            var BookingList = await database.GetSalonServices(SalonDetails.Key);
+
             if (BookingList != null)
             {
                 RequestedList.AddRange(BookingList);

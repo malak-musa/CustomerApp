@@ -14,6 +14,7 @@ namespace BeautyBookCustomerApp.ViewModel
         public string Email { set; get; }
         public string Password { set; get; }
         public ICommand SigInButton { get; }
+
         private Database _firebase;
 
         public LoginViewModel()

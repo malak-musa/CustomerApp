@@ -17,22 +17,17 @@ namespace BeautyBookCustomerApp.Views
     {
         public MainPage()
         {
-
             //BindingContext = new MainPageViewModel();
             var viewModel = new MainPageViewModel(Navigation);
             BindingContext = viewModel;
             InitializeComponent();
         }
 
-
-
-
-
-        private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var viewModel = BindingContext as MainPageViewModel;
-            viewModel?.CollectionView_SelectionChanged(sender, e);
-        }
+        //private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    var viewModel = BindingContext as MainPageViewModel;
+        //    viewModel?.CollectionView_SelectionChanged(sender, e);
+        //}
 
     }
 }

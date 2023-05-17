@@ -19,10 +19,6 @@
                          CornerRadius="50"
                          HorizontalOptions="StartAndExpand"
                          Command="{Binding ProfileCommand}"/>
-
-           
-            
-
         </Grid>
     </NavigationPage.TitleView>
     
@@ -30,8 +26,9 @@
         <StackLayout Margin="10,40,10,0">
             
             <CollectionView ItemsSource="{Binding RequestedList}"
-                            SelectionChanged="CollectionView_SelectionChanged"
-                            SelectionMode="Single">
+                            SelectionChangedCommand="{Binding SelectCardCommand}"
+                            SelectionMode="Single"
+                            SelectedItem="{Binding SelectedItem}">
                 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

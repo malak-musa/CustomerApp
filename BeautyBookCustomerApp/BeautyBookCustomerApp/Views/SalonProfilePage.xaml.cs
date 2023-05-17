@@ -16,26 +16,24 @@ namespace BeautyBookCustomerApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SalonProfilePage : ContentPage
     {
+        FirebaseObject<SalonInformationModel> Deatails { set; get; }
+
         public class LabelData
         {
             public string LabelText { get; set; }
         }
 
-        FirebaseObject<SalonInformationModel> Deatails { set; get; }
         public SalonProfilePage(FirebaseObject<SalonInformationModel> details)
         {
-            BindingContext = new SalonProfileViewModel { SalonDetails = details };
             Deatails = details;
-            InitializeComponent();
-            
+            BindingContext = new SalonProfileViewModel { SalonDetails = details };
 
+            InitializeComponent();
         }
 
         private async void AppointmentButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new BookingPage1(Deatails));
         }
-
-
     }
 }

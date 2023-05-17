@@ -28,6 +28,23 @@ namespace BeautyBookCustomerApp.ViewModels
 
         public string SalonName => _salonDetails.Object.SalonName;
 
+        AuthModel _userInfo;
+
+        public AuthModel UserInfo
+        {
+            set
+            {
+
+                _userInfo= value;
+                OnPropertyChanged();
+
+            }
+            get
+            {
+                return _userInfo;
+            }
+        }
+
         public ObservableRangeCollection<FirebaseObject<BookingModel>> RequestedList { get; set; }
         public ICommand DeleteBookingCommand { set; get; }
         public ICommand OnApperingCommand { set; get; }
@@ -44,23 +61,23 @@ namespace BeautyBookCustomerApp.ViewModels
         {
             //System.Console.WriteLine(selectedBook);
             var isDeleted = await database.DeleteBooking(selectedBook);
+
             if (isDeleted)
             {
                 RequestedList.Remove(selectedBook);
-
             }
         }
 
         async void OnAppearing()
         {
             string userID = await SecureStorage.GetAsync("oauth_token");
+            UserInfo=await database.GetUserInfo(userID);
             var BookingList = await database.GetBooking(userID);
+
             if (BookingList != null)
             {
                 RequestedList.AddRange(BookingList);
-
             }
         }
-
     }
 }

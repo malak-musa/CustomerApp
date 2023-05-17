@@ -14,7 +14,6 @@ namespace BeautyBookCustomerApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-
         public LoginPage()
         {
             BindingContext = new LoginViewModel();
@@ -24,11 +23,6 @@ namespace BeautyBookCustomerApp.Views
         private void OnSignupLabelTapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SignupPage());
-        }
-
-        private async void LoginButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MainPage());
         }
     }
 }

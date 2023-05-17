@@ -16,6 +16,7 @@ using Firebase.Database.Query;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
 using BeautyBookAdminApp.Models;
+using Xamarin.Forms;
 
 namespace BeautyBookCustomerApp.Services
 {
@@ -23,6 +24,21 @@ namespace BeautyBookCustomerApp.Services
     {
         FirebaseClient firebaseClient = new FirebaseClient("https://beautybookapp-a44e5-default-rtdb.europe-west1.firebasedatabase.app/");
         private const string FirebaseApiKey = "AIzaSyA37bTpBm27kjiHDuf5tigFwCmVsxmEYsY";
+        private const string AuthDomain = "beautybookapp-a44e5.firebaseapp.com";
+        private readonly FirebaseAuthClient CustomerAuth;
+
+        public Database()
+        {
+            var config = new FirebaseAuthConfig
+            {
+                ApiKey = FirebaseApiKey,
+                AuthDomain = AuthDomain,
+                Providers = new FirebaseAuthProvider[]{
+                new EmailProvider()
+                },
+            };
+            CustomerAuth = new FirebaseAuthClient(config);
+        }
 
         public async Task<bool> SaveSalonInfo(CustomerModel salon)
         {
@@ -49,26 +65,16 @@ namespace BeautyBookCustomerApp.Services
         public async Task SingUp(AuthModel authModel, string email, string password)
         {
             try
-            {
-                Debug.WriteLine("email" + email);
-                var config = new FirebaseAuthConfig
-                {
-                    ApiKey = FirebaseApiKey,
-                    AuthDomain = "beautybookapp-a44e5.firebaseapp.com",
-                    Providers = new FirebaseAuthProvider[]
-                       {
-                        new EmailProvider()
-                       }
-                };
-
-                var client = new FirebaseAuthClient(config);
-                var userCredential = await client.CreateUserWithEmailAndPasswordAsync(email, password);
+            {                
+                var userCredential = await CustomerAuth.CreateUserWithEmailAndPasswordAsync(email, password);
                 authModel.UserId = userCredential.User.Uid;
 
-                await firebaseClient.Child("CustomerModel").PostAsync(authModel);
+                await firebaseClient.Child("CustomerModel").PostAsync<AuthModel>(authModel);
+                await SecureStorage.SetAsync("oauth_token", userCredential.User.Uid);
+
                 if (userCredential.User.Uid != null)
                 {
-                    App.Current.MainPage = new MainPage();
+                    App.Current.MainPage = new NavigationPage(new MainPage());
                 }
             }
             catch (FirebaseAuthException ex)
@@ -99,24 +105,14 @@ namespace BeautyBookCustomerApp.Services
         {
             try
             {
-                var config = new FirebaseAuthConfig
-                {
-                    ApiKey = FirebaseApiKey,
-                    AuthDomain = "beautybookapp-a44e5.firebaseapp.com",
-                    Providers = new FirebaseAuthProvider[]
-                       {
-                        new EmailProvider()
-                       }
-                };
-
-                var client = new FirebaseAuthClient(config);
-                var userCredential = await client.SignInWithEmailAndPasswordAsync(email, password);
+                var userCredential = await CustomerAuth.SignInWithEmailAndPasswordAsync(email, password);
                 string token = userCredential.User.Uid;
 
                 await SecureStorage.SetAsync("oauth_token", token);
+
                 if (token != null)
                 {
-                    App.Current.MainPage = new MainPage();
+                    App.Current.MainPage = new NavigationPage(new MainPage());
                 }
             }
             catch (FirebaseAuthException ex)
@@ -133,13 +129,21 @@ namespace BeautyBookCustomerApp.Services
                 {
                     await App.Current.MainPage.DisplayAlert("Authentication Error", ex.Reason.ToString(), "OK");
                 }
+                await App.Current.MainPage.DisplayAlert("Authentication Error", ex.Reason.ToString(), "OK");
+
             }
             catch (Exception ex)
             {
                 await App.Current.MainPage.DisplayAlert("Authentication Error", ex.Message.ToString(), "OK");
             }
         }
+        public async Task<AuthModel>GetUserInfo(string userId)
+        {
+            var usersData=await firebaseClient.Child("CustomerModel").OnceAsync<AuthModel>();
 
+            return usersData.Where(el=>el.Object.UserId == userId).FirstOrDefault().Object; 
+
+        }
         public async Task<List<FirebaseObject<SalonInformationModel>>> GetSalons()
         {
             var requestedList = await firebaseClient.Child("SalonProfile").OnceAsync<SalonInformationModel>();
@@ -202,7 +206,7 @@ namespace BeautyBookCustomerApp.Services
 
         }
 
-        public ObservableCollection<CustomerModel> getSalonProfile()
+        public ObservableCollection<CustomerModel> GetSalonProfile()
         {
             var salon = firebaseClient.Child("SalonProfile").AsObservable<CustomerModel>().AsObservableCollection();
             return salon;
@@ -214,6 +218,7 @@ namespace BeautyBookCustomerApp.Services
             {
                 throw new ArgumentException("Salon ID cannot be null or empty.", nameof(salonId));
             }
+
             var salonServices = await firebaseClient
                 .Child("SalonProfile")
                 .Child(salonId)

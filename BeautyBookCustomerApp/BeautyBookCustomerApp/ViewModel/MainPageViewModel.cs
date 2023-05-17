@@ -18,6 +18,10 @@ namespace BeautyBookCustomerApp.ViewModel
     {
         public Database database;
         FirebaseObject<SalonInformationModel> _selectedItem;
+        public List<FirebaseObject<SalonInformationModel>> RequestedList { set; get; }
+        private INavigation _navigation;
+        public ICommand ProfileCommand { get; private set; }
+        public ICommand SelectCardCommand { get; set; }
 
         public FirebaseObject<SalonInformationModel> SelectedItem
         {
@@ -25,17 +29,12 @@ namespace BeautyBookCustomerApp.ViewModel
             set
             {
                 if (value != null)
-                    _selectedItem = null;
+                    _selectedItem = value;
 
-                OnPropertyChanged(nameof(RequestedList));
+                OnPropertyChanged();
             }
         }
-        public List<FirebaseObject<SalonInformationModel>> RequestedList { set; get; }
-
-        private INavigation _navigation;
-
-        public ICommand ProfileCommand { get; private set; }
-
+        
         public MainPageViewModel(INavigation navigation)
         {
             ProfileCommand = new Command(OnProfileTapped);
@@ -47,6 +46,8 @@ namespace BeautyBookCustomerApp.ViewModel
                 RequestedList = await database.GetSalons();
             });
             t.Wait();
+
+            SelectCardCommand = new Command(SelectCard);
         }
 
         private async void OnProfileTapped()
@@ -54,14 +55,19 @@ namespace BeautyBookCustomerApp.ViewModel
             await Application.Current.MainPage.Navigation.PushAsync(new UserProfilePage(SelectedItem));
         }
 
-        public async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var selectedItem = e.CurrentSelection.FirstOrDefault();
+        //public async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    var selectedItem = e.CurrentSelection.FirstOrDefault();
 
-            if (selectedItem != null)
-            {
-                await _navigation.PushAsync(new SalonProfilePage((FirebaseObject<SalonInformationModel>)selectedItem));
-            }
+        //    if (selectedItem != null)
+        //    {
+        //        await _navigation.PushAsync(new SalonProfilePage((FirebaseObject<SalonInformationModel>)selectedItem));
+        //    }
+        //}
+
+        private async void SelectCard()
+        {
+            await _navigation.PushAsync(new SalonProfilePage(SelectedItem));
         }
     }
 }

@@ -83,6 +83,11 @@ namespace BeautyBookCustomerApp.Views
 
         private async void NextButton_Clicked(object sender, EventArgs e)
         {
+            if (selectedDate == DateTime.MinValue)
+            {
+                await Application.Current.MainPage.DisplayAlert("sorry", "you should select time", "ok");
+                return;
+            }
             await Navigation.PushAsync(new BookingPage3(serviceListParameter, selectedDate, selectedTimeText, Details));
         }
     }
