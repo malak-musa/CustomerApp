@@ -23,7 +23,7 @@
     </NavigationPage.TitleView>
     
     <ContentPage.Content>
-        <StackLayout Margin="10,40,10,0">
+        <StackLayout Margin="30,30,30,0">
             
             <CollectionView ItemsSource="{Binding RequestedList}"
                             SelectionChangedCommand="{Binding SelectCardCommand}"
@@ -36,9 +36,9 @@
 
                             <Frame BorderColor="Transparent" 
                                    HeightRequest="60"
-                                   Margin="10,10,10,10"
+                                   Margin="0,20,0,10"
                                    CornerRadius="15"
-                                   BackgroundColor="#3C504C">
+                                   BackgroundColor="#d6e8e4">
 
                                 <Grid>
                                     <Grid.RowDefinitions>
@@ -54,23 +54,33 @@
 
                                     <ImageButton Grid.Column="0" 
                                                  Source="salon_avatar.png" 
-                                                 BackgroundColor="#cccccc"
                                                  WidthRequest="65"
                                                  HeightRequest="65"
                                                  CornerRadius="50"
+                                                 BackgroundColor="Transparent"
                                                  HorizontalOptions="StartAndExpand"/>
 
                                     <Label Grid.Column="1"
                                            Text="{Binding Object.SalonName}"
                                            FontSize="20"
                                            TextColor="Black"
-                                           Margin="20,0,0,0"/>
+                                           Margin="25,0,0,0"/>
 
-                                    <StackLayout Orientation="Horizontal" Spacing="10" Grid.Column="1">
-                                        <Image Source="location_icon.png" WidthRequest="25" HeightRequest="30" Margin="20,30,0,0"/>
-                                        <Label Text="{Binding Object.Address}" FontSize="Small" TextColor="Black" Margin="0,40,0,0" />
+                                    <StackLayout Grid.Column="1"
+                                                 Orientation="Horizontal" 
+                                                 Spacing="10">
+
+                                        <Image Source="location_icon.png" 
+                                               WidthRequest="25" 
+                                               HeightRequest="30" 
+                                               Margin="20,35,0,0"/>
+
+                                        <Label Text="{Binding Object.Address}" 
+                                               FontSize="18" 
+                                               TextColor="Black" 
+                                               Margin="0,40,0,0" />
+                                        
                                     </StackLayout>
-
                                 </Grid>
                             </Frame>
                         </Grid>

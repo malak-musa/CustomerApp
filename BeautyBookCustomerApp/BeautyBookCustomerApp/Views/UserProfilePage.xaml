@@ -50,12 +50,12 @@
                        FontSize="20" 
                        TextColor="Black" 
                        HorizontalOptions="Center" 
-                       Margin="20,20,20,0"/>
+                       Margin="20,15,20,0"/>
                 <Label Text="{Binding UserInfo.PhoneNumber}" 
                        FontSize="18" 
                        TextColor="Black" 
                        HorizontalOptions="Center" 
-                       Margin="20,10,20,0"/>
+                       Margin="20,5,20,0"/>
 
                 <BoxView BackgroundColor="#D7D7D7" 
                          HeightRequest="1"
@@ -77,7 +77,7 @@
                                 <Frame HeightRequest="170"
                                        Margin="30,15,30,20"
                                        CornerRadius="10"
-                                       BackgroundColor="#F2F2F2">
+                                       BackgroundColor="#f1f1f1">
 
                                     <Grid>
                                         <Grid.RowDefinitions>
@@ -94,11 +94,13 @@
                                             <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <Image Grid.RowSpan="3"
-                                               Source="salon_avatar.png"
-                                               WidthRequest="0"
-                                               HeightRequest="30"
-                                               Margin="-50,0,0,0"/>
+                                        <ImageButton Grid.Column="0" 
+                                                     Source="salon_avatar.png" 
+                                                     WidthRequest="80"
+                                                     HeightRequest="65"
+                                                     CornerRadius="20"
+                                                     BackgroundColor="Transparent"
+                                                     HorizontalOptions="StartAndExpand"/>
 
                                         <Label Grid.Column="1"
                                                Text="{Binding Object.SalonName}"
@@ -127,13 +129,13 @@
                                                Text="{Binding Object.Date}"
                                                TextColor="Black"
                                                FontSize="16"
-                                               Margin="20,45,0,0"/>
+                                               Margin="20,5,0,0"/>
 
                                         <Label Grid.Column="0" Grid.Row="3"
                                                Text="{Binding Object.Time}"
                                                TextColor="Black"
                                                FontSize="16"
-                                               Margin="20,20,0,0"/>
+                                               Margin="20,35,0,0"/>
 
                                         <Label Grid.Column="0" Grid.Row="4"
                                                Text="{Binding Object.Services}"
