@@ -137,6 +137,7 @@ namespace BeautyBookCustomerApp.Services
                 await App.Current.MainPage.DisplayAlert("Authentication Error", ex.Message.ToString(), "OK");
             }
         }
+        
         public async Task<AuthModel>GetUserInfo(string userId)
         {
             var usersData=await firebaseClient.Child("CustomerModel").OnceAsync<AuthModel>();
@@ -144,6 +145,7 @@ namespace BeautyBookCustomerApp.Services
             return usersData.Where(el=>el.Object.UserId == userId).FirstOrDefault().Object; 
 
         }
+        
         public async Task<List<FirebaseObject<SalonInformationModel>>> GetSalons()
         {
             var requestedList = await firebaseClient.Child("SalonProfile").OnceAsync<SalonInformationModel>();
@@ -228,6 +230,4 @@ namespace BeautyBookCustomerApp.Services
             return salonServices.ToList();
         }
     }
-
-
 }

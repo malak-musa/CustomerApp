@@ -27,7 +27,6 @@ namespace BeautyBookCustomerApp.Views
 
         private async void Logout_clicked(object sender, EventArgs e)
         {
-            // Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
             await Application.Current.MainPage.Navigation.PopToRootAsync();
             Application.Current.MainPage = new NavigationPage(new LoginPage());
             SecureStorage.RemoveAll();

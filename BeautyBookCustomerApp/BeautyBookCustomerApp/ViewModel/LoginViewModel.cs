@@ -10,17 +10,16 @@ namespace BeautyBookCustomerApp.ViewModel
 {
     public class LoginViewModel
     {
-
         public string Email { set; get; }
         public string Password { set; get; }
-        public ICommand SigInButton { get; }
+        public ICommand LoginButton { get; }
 
         private Database _firebase;
 
         public LoginViewModel()
         {
             _firebase = new Database();
-            SigInButton = new Command(async () => await SignIn());
+            LoginButton = new Command(async () => await SignIn());
         }
 
         private async Task SignIn()

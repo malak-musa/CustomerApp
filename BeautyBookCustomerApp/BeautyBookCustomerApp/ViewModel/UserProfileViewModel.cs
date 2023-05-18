@@ -18,7 +18,11 @@ namespace BeautyBookCustomerApp.ViewModels
     public class UserProfileViewModel : BaseViewModel
     {
         Database database;
-
+        public ObservableRangeCollection<FirebaseObject<BookingModel>> RequestedList { get; set; }
+        public ICommand DeleteBookingCommand { set; get; }
+        public ICommand OnApperingCommand { set; get; }
+        public string SalonName => _salonDetails.Object.SalonName;
+        
         private FirebaseObject<SalonInformationModel> _salonDetails;
         public FirebaseObject<SalonInformationModel> SalonDetails
         {
@@ -26,28 +30,19 @@ namespace BeautyBookCustomerApp.ViewModels
             set => SetProperty(ref _salonDetails, value);
         }
 
-        public string SalonName => _salonDetails.Object.SalonName;
-
         AuthModel _userInfo;
-
         public AuthModel UserInfo
         {
             set
             {
-
                 _userInfo= value;
                 OnPropertyChanged();
-
             }
             get
             {
                 return _userInfo;
             }
         }
-
-        public ObservableRangeCollection<FirebaseObject<BookingModel>> RequestedList { get; set; }
-        public ICommand DeleteBookingCommand { set; get; }
-        public ICommand OnApperingCommand { set; get; }
 
         public UserProfileViewModel()
         {
@@ -59,7 +54,6 @@ namespace BeautyBookCustomerApp.ViewModels
 
         async void DeleteBooking(FirebaseObject<BookingModel> selectedBook)
         {
-            //System.Console.WriteLine(selectedBook);
             var isDeleted = await database.DeleteBooking(selectedBook);
 
             if (isDeleted)

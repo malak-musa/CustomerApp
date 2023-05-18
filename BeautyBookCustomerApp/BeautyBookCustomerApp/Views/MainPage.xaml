@@ -38,7 +38,7 @@
                                    HeightRequest="60"
                                    Margin="10,10,10,10"
                                    CornerRadius="15"
-                                   BackgroundColor="#D5E8E4">
+                                   BackgroundColor="#3C504C">
 
                                 <Grid>
                                     <Grid.RowDefinitions>

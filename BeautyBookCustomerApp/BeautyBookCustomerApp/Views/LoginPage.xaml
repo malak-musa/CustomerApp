@@ -78,13 +78,12 @@
                     FontSize="20"
                     CornerRadius="10"
                     Margin="0,50,0,0"
-                    Command="{Binding SigInButton}"
-                    />
+                    Command="{Binding LoginButton}"/>
 
             <Label x:Name="ErrorLabel"
                    TextColor="Red"
                    IsVisible="False"
-                   HorizontalOptions="Center" />
+                   HorizontalOptions="Center"/>
 
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Center" 
@@ -108,7 +107,5 @@
                 </Label>
             </StackLayout>
         </StackLayout>
-
     </ContentPage.Content>
-
 </ContentPage>

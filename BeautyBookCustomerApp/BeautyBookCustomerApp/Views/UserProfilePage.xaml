@@ -9,11 +9,9 @@
         <ContentView>
             <Label Text="My Profile"
                    FontSize="20"
+                   FontAttributes="Bold"
                    TextColor="Black"
-                   Margin="85,0,85,0"/>
-
-
-
+                   Margin="70,0,80,0"/>
         </ContentView>
     </NavigationPage.TitleView>
 
@@ -38,7 +36,7 @@
                                  BackgroundColor="Transparent"
                                  WidthRequest="30"
                                  HeightRequest="25"
-                                 Margin="0,0,15,0"
+                                 Margin="0,22,15,0"
                                  HorizontalOptions="EndAndExpand"
                                  Clicked="Logout_clicked"/>
                 </StackLayout>
@@ -52,22 +50,21 @@
                        FontSize="20" 
                        TextColor="Black" 
                        HorizontalOptions="Center" 
-                       Margin="20"/>
+                       Margin="20,20,20,0"/>
                 <Label Text="{Binding UserInfo.PhoneNumber}" 
-                       FontSize="20" 
+                       FontSize="18" 
                        TextColor="Black" 
                        HorizontalOptions="Center" 
-                       Margin="20"/>
+                       Margin="20,10,20,0"/>
 
                 <BoxView BackgroundColor="#D7D7D7" 
                          HeightRequest="1"
-                         Margin="30,0,30,0"/>
+                         Margin="30,10,30,0"/>
 
                 <Label Text="My bookings appointments"
                        FontSize="18"
                        TextColor="Black"
                        Margin="40,20,0,0"/>
-
 
                 <CollectionView ItemsSource="{Binding RequestedList}"
                                 x:Name="collection"
@@ -122,10 +119,9 @@
                                                      HeightRequest="50"
                                                      VerticalOptions="End"
                                                      HorizontalOptions="End"
-                                                     Margin="30,0,0,10"
+                                                     Margin="90,0,0,10"
                                                      Command="{Binding BindingContext.DeleteBookingCommand, Source={x:Reference Name=collection}}"
                                                      CommandParameter="{Binding .}"/>
-
 
                                         <Label Grid.Column="0" Grid.Row="3"
                                                Text="{Binding Object.Date}"
@@ -144,8 +140,6 @@
                                                TextColor="Black"
                                                FontSize="16"
                                                Margin="20,0,0,0"/>
-
-
                                     </Grid>
                                 </Frame>
                             </Grid>

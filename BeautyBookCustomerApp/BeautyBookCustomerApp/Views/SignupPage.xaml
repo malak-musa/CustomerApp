@@ -21,7 +21,6 @@
 
             <StackLayout Spacing="10">
 
-
                 <Entry x:Name="FullName"
                        Text="{Binding FullName}"
                        Placeholder="Full Name"
@@ -62,12 +61,11 @@
                         <ImageButton.Triggers>
                             <EventTrigger Event="Clicked">
                                 <local:ShowPassword ShowIcon="eye_icon.png"
-                                                                 HideIcon="hide_eye_icon.png"
-                                                                 x:Name="ShowPasswordButtonTrigger"/>
+                                                    HideIcon="hide_eye_icon.png"
+                                                    x:Name="ShowPasswordButtonTrigger"/>
                             </EventTrigger>
                         </ImageButton.Triggers>
                     </ImageButton>
-
                 </Grid>
 
                 <Entry x:Name="PhoneNumber"
@@ -79,7 +77,6 @@
                        Keyboard="Telephone"
                        Margin="40,0,40,0"/>
             </StackLayout>
-
 
             <Button x:Name="SignupButton"
                     Text="Sign up"
