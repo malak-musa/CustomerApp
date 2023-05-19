@@ -11,13 +11,6 @@ namespace BeautyBookCustomerApp.ViewModel
 {
     public class SignupViewModel
     {
-        public SignupViewModel()
-        {
-            _firebase = new Database();
-
-
-            SigUpButton = new Command(async () => await AddUser());
-        }
         public string UserID { set; get; }
         public string Email { set; get; }
         public string Password { set; get; }
@@ -27,6 +20,14 @@ namespace BeautyBookCustomerApp.ViewModel
         public ICommand SigUpButton { get; }
         private Database _firebase;
         public IList<CustomerModel> Cities { get; set; }
+
+        public SignupViewModel()
+        {
+            _firebase = new Database();
+
+            SigUpButton = new Command(async () => await AddUser());
+        }
+
         private async Task AddUser()
         {
             AuthModel addUser = new AuthModel();
@@ -35,7 +36,6 @@ namespace BeautyBookCustomerApp.ViewModel
                 addUser.PhoneNumber = PhoneNumber;
                 addUser.FullName = FullName;
                 addUser.Email = Email;
-
             }
             await _firebase.SingUp(addUser, Email, Password);
         }

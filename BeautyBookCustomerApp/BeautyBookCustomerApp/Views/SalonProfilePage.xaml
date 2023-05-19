@@ -29,33 +29,16 @@
 
                 <StackLayout Orientation="Vertical" 
                              Margin="20,10,0,0">
-
-                    <Label Text="&#x0a;&#x0a;&#x0a;"/>
                     <Button Text="Appointment" 
                             FontSize="Small" 
                             BackgroundColor="#3C504C" 
                             TextColor="White" 
                             CornerRadius="5" 
-                            HeightRequest="35"
-                            Padding="5" 
+                            WidthRequest="140"
+                            HeightRequest="50"
+                            Padding="15" 
+                            Margin="20,80,0,0"
                             Clicked="AppointmentButton_Clicked"/>
-
-                    <StackLayout Orientation="Horizontal" 
-                                 Margin="-30,0,0,0">
-
-                        <Image Source="phone_icon.png" 
-                               HeightRequest="24" 
-                               WidthRequest="24" />
-
-                        <Button Text="Call us " 
-                                FontSize="14" 
-                                BackgroundColor="#B9B9B9" 
-                                TextColor="White" 
-                                CornerRadius="5" 
-                                HeightRequest="35" 
-                                WidthRequest="150"
-                                Padding="5"/>
-                    </StackLayout>
                 </StackLayout>
             </StackLayout>
 
@@ -63,16 +46,19 @@
                      HeightRequest="1" 
                      WidthRequest="1000" 
                      HorizontalOptions="CenterAndExpand" 
-                     Margin="10,30,10,30" />
+                     Margin="20,30,20,30" />
             
             <StackLayout Margin="20,-10,10,10">
 
                 <Label Text="Inforamtion" 
-                       FontSize="18" 
+                       FontSize="20" 
                        FontAttributes="Bold" 
+                       Margin="10"
                        TextColor="Black"/>
+                
                 <StackLayout Orientation="Horizontal" 
-                             Spacing="10">
+                             Spacing="10"
+                             Margin="10">
                     <Image Source="location_icon.png" 
                            WidthRequest="30" 
                            HeightRequest="30" 

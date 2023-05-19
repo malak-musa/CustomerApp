@@ -30,13 +30,13 @@
                            TextColor="Black"
                            FontAttributes="Bold"
                            FontSize="16"
-                           Margin="290,25,0,0"/>
+                           Margin="275,25,0,0"/>
                     
                     <ImageButton Source="logout_icon.png" 
                                  BackgroundColor="Transparent"
                                  WidthRequest="30"
                                  HeightRequest="25"
-                                 Margin="0,22,15,0"
+                                 Margin="0,22,25,0"
                                  HorizontalOptions="EndAndExpand"
                                  Clicked="Logout_clicked"/>
                 </StackLayout>
