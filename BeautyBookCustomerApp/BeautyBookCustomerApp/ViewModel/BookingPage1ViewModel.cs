@@ -27,18 +27,16 @@ namespace BeautyBookCustomerApp.ViewModel
             get => _salonDetails;
             set => SetProperty(ref _salonDetails, value);
         }
+
         public BookingPage1ViewModel()
         {
-            // string userID = await SecureStorage.GetAsync("oathu_token");
             RequestedList = new ObservableRangeCollection<FirebaseObject<SalonInformationModel>>();
-
             database = new Database();
             OnApperingCommand = new Command(OnAppearing);
         }
 
         public async void OnAppearing()
         {
-
             var BookingList = await database.GetSalonServices(SalonDetails.Key);
 
             if (BookingList != null)

@@ -11,15 +11,13 @@ namespace BeautyBookCustomerApp.ViewModel
 {
     public class SignupViewModel
     {
-        public string UserID { set; get; }
         public string Email { set; get; }
         public string Password { set; get; }
         public string FullName { set; get; }
         public string PhoneNumber { set; get; }
         public string Username { get; set; }
         public ICommand SigUpButton { get; }
-        private Database _firebase;
-        public IList<CustomerModel> Cities { get; set; }
+        private readonly Database _firebase;
 
         public SignupViewModel()
         {

@@ -11,8 +11,6 @@ namespace BeautyBookCustomerApp
         public App()
         {
             InitializeComponent();
-
-            //MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override async void OnStart()

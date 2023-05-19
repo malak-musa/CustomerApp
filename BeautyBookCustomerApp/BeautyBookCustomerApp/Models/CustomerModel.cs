@@ -11,6 +11,5 @@ namespace BeautyBookCustomerApp.Models
         public string Password { set; get; }
         public string FullName { set; get; }
         public string PhoneNumber { set; get; }
-        //public string UserID { set; get; }
     }
 }

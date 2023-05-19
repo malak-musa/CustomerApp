@@ -8,7 +8,6 @@ namespace BeautyBookCustomerApp.Models
     {
         public string Address { get; set; } 
         public string SalonName { get; set; }
-        public string DaysOff { get; set; }
         public string OpeingHoures { get; set; }
         public string SalonType { get; set; }
         public string PhoneNumber { get; set; }

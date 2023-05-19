@@ -9,7 +9,7 @@
             <Label Text="Appointment"
                    FontSize="20"
                    TextColor="Black"
-                   Margin="30,120,30,0"/>
+                   Margin="75,0,75,0"/>
         </ContentView>
     </NavigationPage.TitleView>
 
@@ -43,9 +43,9 @@
 
                         <BoxView BackgroundColor="Silver" 
                                  Opacity="0.5"
-                         HeightRequest="1"
+                                 HeightRequest="1"
                                  VerticalOptions="Center"
-                         Margin="-130,70,-80,0"/>
+                                 Margin="-130,70,-80,0"/>
 
                         <StackLayout Margin="-120,20,0,0" 
                                      Spacing="10">
@@ -81,6 +81,5 @@
                     Clicked="ConfirmButton_Clicked"/>
 
         </StackLayout>
-
     </ContentPage.Content>
 </ContentPage>

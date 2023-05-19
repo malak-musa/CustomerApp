@@ -19,6 +19,7 @@ namespace BeautyBookCustomerApp.ViewModels
 
             storage = value;
             OnPropertyChanged(propertyName);
+
             return true;
         }
     }

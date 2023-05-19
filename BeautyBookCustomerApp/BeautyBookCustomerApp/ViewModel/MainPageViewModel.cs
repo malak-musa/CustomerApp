@@ -17,12 +17,12 @@ namespace BeautyBookCustomerApp.ViewModel
     public class MainPageViewModel : ObservableObject
     {
         public Database database;
-        FirebaseObject<SalonInformationModel> _selectedItem;
         public List<FirebaseObject<SalonInformationModel>> RequestedList { set; get; }
-        private INavigation _navigation;
+        private readonly INavigation _navigation;
         public ICommand ProfileCommand { get; private set; }
         public ICommand SelectCardCommand { get; set; }
 
+        FirebaseObject<SalonInformationModel> _selectedItem;
         public FirebaseObject<SalonInformationModel> SelectedItem
         {
             get { return _selectedItem; }
@@ -54,16 +54,6 @@ namespace BeautyBookCustomerApp.ViewModel
         {
             await Application.Current.MainPage.Navigation.PushAsync(new UserProfilePage(SelectedItem));
         }
-
-        //public async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    var selectedItem = e.CurrentSelection.FirstOrDefault();
-
-        //    if (selectedItem != null)
-        //    {
-        //        await _navigation.PushAsync(new SalonProfilePage((FirebaseObject<SalonInformationModel>)selectedItem));
-        //    }
-        //}
 
         private async void SelectCard()
         {

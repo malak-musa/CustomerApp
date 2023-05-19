@@ -5,11 +5,12 @@
              xmlns:local="clr-namespace:BeautyBookCustomerApp.ViewModel"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="White">
+    
     <ContentPage.BindingContext>
         <local:LoginViewModel></local:LoginViewModel>
     </ContentPage.BindingContext>
-    <ContentPage.Content>
 
+    <ContentPage.Content>
         <StackLayout VerticalOptions="StartAndExpand"
                      Margin="40,0,40,0">
 

@@ -24,7 +24,7 @@ namespace BeautyBookCustomerApp.Views
         public DateTime date;
         public string time;
         public string service;
-        Database _userDB = new Database();
+        readonly Database _userDB = new Database();
         private const string FirebaseApiKey = "AIzaSyA37bTpBm27kjiHDuf5tigFwCmVsxmEYsY ";
 
         public BookingPage3(List<string> ServiceList, DateTime date, string time, FirebaseObject<SalonInformationModel> details)
@@ -37,11 +37,9 @@ namespace BeautyBookCustomerApp.Views
             foreach (string s in ServiceList)
             {
                 concatenatedString += s + "\n";
-
             }
 
             service = concatenatedString;
-
             selectedDateLabel.Text = $"Date: {date:MM/dd/yyyy}";
             selectedTimeLabel.Text = $"Time: {time}";
             selectedServices.Text = $"Services: {concatenatedString}";
@@ -55,11 +53,8 @@ namespace BeautyBookCustomerApp.Views
                 Time = selectedTimeLabel.Text,
                 Services = service,
                 SalonName = SalonNameLabel.Text,
-                //bookingModel.CustomerPhone =  ;
                 UserId = await SecureStorage.GetAsync("oauth_token")
             };
-
-
 
             try
             {

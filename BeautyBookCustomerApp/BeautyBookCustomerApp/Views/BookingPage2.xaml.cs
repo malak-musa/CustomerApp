@@ -18,8 +18,8 @@ namespace BeautyBookCustomerApp.Views
         private static Button previousTimeButton = null;
         private static string selectedTime = null;
         public string selectedTimeText = null;
-        List<string> serviceListParameter;
-        ObservableCollection<TimeModel> timeModel;
+        readonly List<string> serviceListParameter;
+        readonly ObservableCollection<TimeModel> timeModel;
 
         FirebaseObject<SalonInformationModel> Details { get; set; }
         public BookingPage2(List<string> ServiceList, FirebaseObject<SalonInformationModel> details)

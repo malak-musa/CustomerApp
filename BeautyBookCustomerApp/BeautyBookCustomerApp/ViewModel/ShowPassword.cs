@@ -11,8 +11,12 @@ namespace BeautyBookCustomerApp.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         public string ShowIcon { get; set; }
         public string HideIcon { get; set; }
+
         bool _hidePassword = true;
-        public bool HidePassword { get => _hidePassword;
+        public bool HidePassword 
+        { 
+            get => _hidePassword;
+            
             set
             {
                 if(_hidePassword != value)

@@ -22,7 +22,7 @@ namespace BeautyBookCustomerApp.Services
 {
     public class Database
     {
-        FirebaseClient firebaseClient = new FirebaseClient("https://beautybookapp-a44e5-default-rtdb.europe-west1.firebasedatabase.app/");
+        readonly FirebaseClient firebaseClient = new FirebaseClient("https://beautybookapp-a44e5-default-rtdb.europe-west1.firebasedatabase.app/");
         private const string FirebaseApiKey = "AIzaSyA37bTpBm27kjiHDuf5tigFwCmVsxmEYsY";
         private const string AuthDomain = "beautybookapp-a44e5.firebaseapp.com";
         private readonly FirebaseAuthClient CustomerAuth;
@@ -33,9 +33,10 @@ namespace BeautyBookCustomerApp.Services
             {
                 ApiKey = FirebaseApiKey,
                 AuthDomain = AuthDomain,
-                Providers = new FirebaseAuthProvider[]{
-                new EmailProvider()
-                },
+                Providers = new FirebaseAuthProvider[]
+                {
+                    new EmailProvider()
+                }
             };
             CustomerAuth = new FirebaseAuthClient(config);
         }
@@ -54,6 +55,7 @@ namespace BeautyBookCustomerApp.Services
         public async Task<bool> SaveCustomerInfo(CustomerModel salon)
         {
             var data = await firebaseClient.Child(nameof(CustomerModel)).PostAsync(JsonConvert.SerializeObject(salon));
+            
             if (!string.IsNullOrEmpty(data.Key))
             {
                 return true;
@@ -143,7 +145,6 @@ namespace BeautyBookCustomerApp.Services
             var usersData=await firebaseClient.Child("CustomerModel").OnceAsync<AuthModel>();
 
             return usersData.Where(el=>el.Object.UserId == userId).FirstOrDefault().Object; 
-
         }
         
         public async Task<List<FirebaseObject<SalonInformationModel>>> GetSalons()
@@ -151,25 +152,21 @@ namespace BeautyBookCustomerApp.Services
             var requestedList = await firebaseClient.Child("SalonProfile").OnceAsync<SalonInformationModel>();
 
             return requestedList.ToList();
-
         }
 
         public async Task<bool> DeleteBooking(FirebaseObject<BookingModel> booking)
         {
             try
             {
-                // Get a reference to the booking to be deleted
                 var bookingRef = firebaseClient.Child("BookingModel").Child(booking.Key);
-
-                // Delete the booking
                 await bookingRef.DeleteAsync();
 
-                // Remove the booking from the local collection
                 return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error deleting booking: {ex.Message}");
+
                 return false;
             }
         }
@@ -181,7 +178,6 @@ namespace BeautyBookCustomerApp.Services
             if (!string.IsNullOrEmpty(data.Key))
             {
                 return true;
-
             }
 
             return false;
@@ -201,16 +197,16 @@ namespace BeautyBookCustomerApp.Services
                 await firebaseClient.Child("BookingModel").Child(objectId).Child("Status").PutAsync<string>(newStatus);
                 return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }
-
         }
 
         public ObservableCollection<CustomerModel> GetSalonProfile()
         {
             var salon = firebaseClient.Child("SalonProfile").AsObservable<CustomerModel>().AsObservableCollection();
+            
             return salon;
         }
 

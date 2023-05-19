@@ -9,14 +9,13 @@ namespace BeautyBookCustomerApp.ViewModel
 {
     public class BookingPage3ViewModel : ObservableObject
     {
-        private FirebaseObject<SalonInformationModel> _salonDetails;
+        public string SalonName => _salonDetails.Object.SalonName;
 
+        private FirebaseObject<SalonInformationModel> _salonDetails;
         public FirebaseObject<SalonInformationModel> SalonDetails
         {
             get => _salonDetails;
             set => SetProperty(ref _salonDetails, value);
         }
-
-        public string SalonName => _salonDetails.Object.SalonName;
     }
 }

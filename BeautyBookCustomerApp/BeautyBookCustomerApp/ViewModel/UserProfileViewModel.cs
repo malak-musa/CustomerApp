@@ -17,7 +17,7 @@ namespace BeautyBookCustomerApp.ViewModels
 {
     public class UserProfileViewModel : BaseViewModel
     {
-        Database database;
+        readonly Database database;
         public ObservableRangeCollection<FirebaseObject<BookingModel>> RequestedList { get; set; }
         public ICommand DeleteBookingCommand { set; get; }
         public ICommand OnApperingCommand { set; get; }
