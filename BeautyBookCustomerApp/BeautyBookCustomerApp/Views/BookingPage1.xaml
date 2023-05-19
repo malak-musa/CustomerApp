@@ -28,15 +28,13 @@
                    TextColor="Black"
                    FontSize="24"
                    HorizontalOptions="Start"
-                   Margin="30,50,30,40"/>
-
-
+                   Margin="30,50,30,30"/>
 
             <Frame BackgroundColor="#EDEDED" 
-                   Margin="10,0,150,10"
+                   Margin="30,0,130,10"
+                   Padding="15"
                    HeightRequest="60"
-                   CornerRadius="10"
-                   >
+                   CornerRadius="10">
 
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -44,77 +42,63 @@
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Text="Service Counter :"
+                    <Label Text="Service Counter:"
                            x:Name="serviceName"
                            FontSize="20"
                            TextColor="Black" />
 
                     <Label x:Name="serviceNumLabel"
                            Grid.Column="2"
-                           FontSize="18"
+                           FontSize="20"
                            TextColor="Gray" 
-                           Margin="0,3,10,0" />
-
-                    
+                           Margin="0,0,10,0" />
                 </Grid>
             </Frame>
 
+            <StackLayout Margin="30,20,30,0"
+                         Spacing="10">
 
+                <CollectionView x:Name="serviceListView"
+                                ItemsSource="{Binding serviceListView}">
 
-            <CollectionView 
-                x:Name="serviceListView"
-                ItemsSource="{Binding serviceListView}"
-                >
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="#EDEDED" 
+                                   Margin="0,0,0,-30"
+                                   Padding="20,10,0,20"
+                                   HeightRequest="60"
+                                   CornerRadius="20">
 
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="130"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
 
-                        <Frame BackgroundColor="#EDEDED" 
-                               Margin="0,0,50,-30"
-                               HeightRequest="60"
-                               CornerRadius="60"
-                               >
+                                    <Label Text="{Binding Name}"
+                                           x:Name="serviceName"
+                                           FontSize="20"
+                                           TextColor="Black"
+                                           Margin="10,0,0,0"/>
 
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
+                                    <ImageButton Grid.Column="2"
+                                                 Source="minus_icon.jpg"
+                                                 BackgroundColor="#EDEDED"
+                                                 Margin="0,0,0,0" 
+                                                 Clicked="MinusButtonClicked"/>
 
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-
-                                <Label Text="{Binding Name}"
-                                       x:Name="serviceName"
-                                       FontSize="20"
-                                       TextColor="Black"
-                                       Margin="40,0,0,0"/>
-
-                                <Label x:Name="serviceNumLabel"
-                                       Grid.Column="2"
-                                       FontSize="18"
-                                       TextColor="Gray" 
-                                       Padding="120,0,0,10" />
-
-                                <ImageButton Grid.Column="3"
-                                             Source="minus_icon.jpg"
-                                             BackgroundColor="#EDEDED"
-                                             Margin="20,0,0,0"  
-                                             Clicked="MinusButtonClicked"/>
-
-                                <ImageButton Grid.Column="4"
-                                 Source="plus_icon.jpg"
-                                 BackgroundColor="#EDEDED" 
-                                 Margin="5,0,0,0"
-                                 Clicked="PlusButtonClicked"/>
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                                    <ImageButton Grid.Column="3"
+                                                 Source="plus_icon.jpg"
+                                                 BackgroundColor="#EDEDED" 
+                                                 Clicked="PlusButtonClicked"/>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+            
             <Button x:Name="nextButton"
                     Text="Next"
                     BackgroundColor="#3C504C"
@@ -123,7 +107,7 @@
                     WidthRequest="200" 
                     FontSize="22"
                     CornerRadius="10"
-                    Margin="30,60,30,30"
+                    Margin="30,30,30,80"
                     Clicked="NextButton_Clicked"/>
 
         </StackLayout>

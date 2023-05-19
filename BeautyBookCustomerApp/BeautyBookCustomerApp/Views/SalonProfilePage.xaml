@@ -47,7 +47,7 @@
                      WidthRequest="1000" 
                      HorizontalOptions="CenterAndExpand" 
                      Margin="20,30,20,30" />
-            
+
             <StackLayout Margin="20,-10,10,10">
 
                 <Label Text="Inforamtion" 
@@ -55,7 +55,7 @@
                        FontAttributes="Bold" 
                        Margin="10"
                        TextColor="Black"/>
-                
+
                 <StackLayout Orientation="Horizontal" 
                              Spacing="10"
                              Margin="10">
@@ -73,39 +73,24 @@
                     <Image Source="time_icon.png" 
                            WidthRequest="20" 
                            HeightRequest="30" 
-                           Margin="10,0,0,0"/>
-                    
+                           Margin="25,0,0,0"/>
+
                     <Label Text="Opening Hours 10:00 AM - 6:00 PM" 
                            FontSize="Small" 
                            Margin="10,5,0,0" />
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal"
-                             Spacing="10"> 
+                             Spacing="10">
                     <Image Source="call_icon.png" 
                            WidthRequest="30" 
                            HeightRequest="30"
-                           Margin="6,0,0,0"/>
+                           Margin="20,0,0,0"/>
                     <Label Text="{Binding Phone}" 
                            FontSize="Small" 
                            Margin="3,5,0,0" />
                 </StackLayout>
-                
-                <StackLayout Orientation="Horizontal" 
-                             Spacing="10">
-                    <Image Source="gander_icon.png" 
-                           WidthRequest="20" 
-                           HeightRequest="30" 
-                           Margin="10,0,0,0"/>
-                    <Label Text="{Binding SalonType}" 
-                           FontSize="Small" 
-                           Margin="10,5,0,0" />
-                </StackLayout>
-
-
             </StackLayout>
-
-           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
