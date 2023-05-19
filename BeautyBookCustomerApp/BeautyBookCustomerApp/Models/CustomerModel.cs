@@ -4,7 +4,6 @@ using System.Text;
 
 namespace BeautyBookCustomerApp.Models
 {
-
     public class CustomerModel
     { 
         public string Username { set; get; }
