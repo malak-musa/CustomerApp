@@ -210,7 +210,7 @@ namespace BeautyBookCustomerApp.Services
             return salon;
         }
 
-        public async Task<List<FirebaseObject<SalonInformationModel>>> GetSalonServices(string salonId)
+        /*public async Task<List<FirebaseObject<SalonInformationModel>>> GetSalonServices(string salonId)
         {
             if (string.IsNullOrEmpty(salonId))
             {
@@ -224,6 +224,12 @@ namespace BeautyBookCustomerApp.Services
                 .OnceAsync<SalonInformationModel>();
 
             return salonServices.ToList();
+        }*/
+        public async Task<IEnumerable<Service>> GetSalonServices(string salonId)
+        {
+            var servicesObj = await firebaseClient.Child("SalonProfile").Child(salonId).Child("Services").OnceAsListAsync<Service>();
+
+            return servicesObj.Select(el => el.Object);
         }
     }
 }

@@ -18,7 +18,17 @@ namespace BeautyBookCustomerApp.ViewModel
     {
         public Database database;
         public ICommand OnApperingCommand { set; get; }
-        public ObservableRangeCollection<FirebaseObject<SalonInformationModel>> RequestedList { set; get; }
+
+        readonly ObservableRangeCollection<Service> services;
+        Service service;
+        //---
+        private ObservableRangeCollection<Service> _services;
+        public ObservableRangeCollection<Service> serviceListView
+        {
+            get => _services;
+            set => SetProperty(ref _services, value);
+        }
+        //---
 
         private FirebaseObject<SalonInformationModel> _salonDetails;
 
@@ -30,9 +40,11 @@ namespace BeautyBookCustomerApp.ViewModel
 
         public BookingPage1ViewModel()
         {
-            RequestedList = new ObservableRangeCollection<FirebaseObject<SalonInformationModel>>();
             database = new Database();
             OnApperingCommand = new Command(OnAppearing);
+
+            services = new ObservableRangeCollection<Service>();
+            serviceListView = new ObservableRangeCollection<Service>();
         }
 
         public async void OnAppearing()
@@ -41,7 +53,7 @@ namespace BeautyBookCustomerApp.ViewModel
 
             if (BookingList != null)
             {
-                RequestedList.AddRange(BookingList);
+                serviceListView.AddRange(BookingList);
             }
         }
     }

@@ -27,22 +27,15 @@ namespace BeautyBookCustomerApp.Views
         readonly Database _userDB = new Database();
         private const string FirebaseApiKey = "AIzaSyA37bTpBm27kjiHDuf5tigFwCmVsxmEYsY ";
 
-        public BookingPage3(List<string> ServiceList, DateTime date, string time, FirebaseObject<SalonInformationModel> details)
+        public BookingPage3(int ServiceNum, DateTime date, string time, FirebaseObject<SalonInformationModel> details)
         {
             InitializeComponent();
             BindingContext = new BookingPage3ViewModel { SalonDetails = details };
+            
 
-            string concatenatedString = "";
-
-            foreach (string s in ServiceList)
-            {
-                concatenatedString += s + "\n";
-            }
-
-            service = concatenatedString;
             selectedDateLabel.Text = $"Date: {date:MM/dd/yyyy}";
             selectedTimeLabel.Text = $"Time: {time}";
-            selectedServices.Text = $"Services: {concatenatedString}";
+            selectedServices.Text = $"Services Number: {ServiceNum}";
         }
 
         private async void ConfirmButton_Clicked(object sender, EventArgs e)

@@ -18,11 +18,11 @@ namespace BeautyBookCustomerApp.Views
         private static Button previousTimeButton = null;
         private static string selectedTime = null;
         public string selectedTimeText = null;
-        readonly List<string> serviceListParameter;
+        readonly int serviceNumParameter;
         readonly ObservableCollection<TimeModel> timeModel;
 
         FirebaseObject<SalonInformationModel> Details { get; set; }
-        public BookingPage2(List<string> ServiceList, FirebaseObject<SalonInformationModel> details)
+        public BookingPage2(int ServiceNum, FirebaseObject<SalonInformationModel> details)
         {
             InitializeComponent();
 
@@ -47,7 +47,7 @@ namespace BeautyBookCustomerApp.Views
             };
 
             Times.ItemsSource = timeModel;
-            serviceListParameter = ServiceList;
+            serviceNumParameter = ServiceNum;
         }
 
         private void OnDateSelected(object sender, DateTimeEventArgs e)
@@ -88,7 +88,7 @@ namespace BeautyBookCustomerApp.Views
                 await Application.Current.MainPage.DisplayAlert("sorry", "you should select time", "ok");
                 return;
             }
-            await Navigation.PushAsync(new BookingPage3(serviceListParameter, selectedDate, selectedTimeText, Details));
+            await Navigation.PushAsync(new BookingPage3(serviceNumParameter, selectedDate, selectedTimeText, Details));
         }
     }
 }

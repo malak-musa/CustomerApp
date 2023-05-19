@@ -5,6 +5,7 @@
              x:Class="BeautyBookCustomerApp.Views.BookingPage1"
              BackgroundColor="White">
 
+
     <NavigationPage.TitleView>
         <ContentView>
             <Label Text="Appointment"
@@ -27,23 +28,23 @@
                    TextColor="Black"
                    FontSize="24"
                    HorizontalOptions="Start"
-                   Margin="30,50,30,0"/>
+                   Margin="30,50,30,40"/>
+
+
 
             <Frame BackgroundColor="#EDEDED" 
-                   Margin="30,20,30,0"
+                   Margin="10,0,150,10"
                    HeightRequest="60"
-                   CornerRadius="10">
+                   CornerRadius="10"
+                   >
 
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Text="Nails"
+                    <Label Text="Service Counter :"
                            x:Name="serviceName"
                            FontSize="20"
                            TextColor="Black" />
@@ -52,50 +53,51 @@
                            Grid.Column="2"
                            FontSize="18"
                            TextColor="Gray" 
-                           Padding="120,0,0,10" />
+                           Margin="0,3,10,0" />
 
-                    <ImageButton Grid.Column="3"
-                                 Source="minus_icon.jpg"
-                                 BackgroundColor="#EDEDED"
-                                 Margin="20,0,0,0"  
-                                 Clicked="MinusButtonClicked"/>
-
-                    <ImageButton Grid.Column="4"
-                                 Source="plus_icon.jpg"
-                                 BackgroundColor="#EDEDED" 
-                                 Margin="5,0,0,0"
-                                 Clicked="PlusButtonClicked"/>
+                    
                 </Grid>
             </Frame>
 
-            <CollectionView ItemsSource="{Binding RequestedList}"
-                            SelectionMode="Single">
+
+
+            <CollectionView 
+                x:Name="serviceListView"
+                ItemsSource="{Binding serviceListView}"
+                >
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
+
+
                         <Frame BackgroundColor="#EDEDED" 
-                               Margin="30,20,30,0"
-                               HeightRequest="25"
-                               CornerRadius="10">
+                               Margin="0,0,50,-30"
+                               HeightRequest="60"
+                               CornerRadius="60"
+                               >
 
                             <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
 
-                                <Label Text="{Binding RequestedList[0]}"
+                                <Label Text="{Binding Name}"
                                        x:Name="serviceName"
-                                       FontSize="18"
-                                       TextColor="Black" />
+                                       FontSize="20"
+                                       TextColor="Black"
+                                       Margin="40,0,0,0"/>
 
                                 <Label x:Name="serviceNumLabel"
                                        Grid.Column="2"
                                        FontSize="18"
                                        TextColor="Gray" 
-                                       Padding="120,-3,0,0" />
+                                       Padding="120,0,0,10" />
 
                                 <ImageButton Grid.Column="3"
                                              Source="minus_icon.jpg"
@@ -104,16 +106,15 @@
                                              Clicked="MinusButtonClicked"/>
 
                                 <ImageButton Grid.Column="4"
-                                             Source="plus_icon.jpg"
-                                             BackgroundColor="#EDEDED" 
-                                             Margin="10,0,0,0"
-                                             Clicked="PlusButtonClicked"/>
+                                 Source="plus_icon.jpg"
+                                 BackgroundColor="#EDEDED" 
+                                 Margin="5,0,0,0"
+                                 Clicked="PlusButtonClicked"/>
                             </Grid>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-            
             <Button x:Name="nextButton"
                     Text="Next"
                     BackgroundColor="#3C504C"

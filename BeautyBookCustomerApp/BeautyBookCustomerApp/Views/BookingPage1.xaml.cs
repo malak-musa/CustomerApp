@@ -17,13 +17,14 @@ namespace BeautyBookCustomerApp.Views
     {
         readonly FirebaseObject<SalonInformationModel> Details;
         public int serviceNumber = 0;
-        public List<string> serviceList = new List<string>();
 
         public BookingPage1(FirebaseObject<SalonInformationModel> details)
         {
             BindingContext = new BookingPage1ViewModel { SalonDetails = details };
             Details = details;
             InitializeComponent();
+            serviceNumLabel.Text = serviceNumber.ToString();
+
         }
 
         private void PlusButtonClicked(object sender, EventArgs e)
@@ -31,10 +32,7 @@ namespace BeautyBookCustomerApp.Views
             serviceNumber++;
             serviceNumLabel.Text = serviceNumber.ToString();
 
-            if (serviceNumber == 1)
-            {
-                serviceList.Add(serviceName.Text);
-            }
+            
         }
 
         private void MinusButtonClicked(object sender, EventArgs e)
@@ -44,21 +42,18 @@ namespace BeautyBookCustomerApp.Views
                 serviceNumber--;
                 serviceNumLabel.Text = serviceNumber.ToString();
             }
-            if (serviceNumber == 0)
-            {
-                serviceList.Remove(serviceName.Text);
-            }
+            
         }
 
         private async void NextButton_Clicked(object sender, EventArgs e)
         {
-            if(serviceList.Count == 0)
+            if(serviceNumber == 0)
             {   
                 await Application.Current.MainPage.DisplayAlert("sorry", "please select service", "ok");
 
                 return;
             }
-            await Navigation.PushAsync(new BookingPage2(serviceList, Details));
+            await Navigation.PushAsync(new BookingPage2(serviceNumber, Details));
         }
     }
 }
