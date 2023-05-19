@@ -121,7 +121,7 @@
                                                      HeightRequest="50"
                                                      VerticalOptions="End"
                                                      HorizontalOptions="End"
-                                                     Margin="90,0,0,10"
+                                                     Margin="40,0,0,10"
                                                      Command="{Binding BindingContext.DeleteBookingCommand, Source={x:Reference Name=collection}}"
                                                      CommandParameter="{Binding .}"/>
 
